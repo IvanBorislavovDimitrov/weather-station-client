@@ -34,6 +34,10 @@ class Navbar extends Component {
                             </li>
 
                             <li className="nav-item" hidden={!isLoggedIn}>
+                                <a href="/add-raspberry" className="nav-link">Add raspberry</a>
+                            </li>
+
+                            <li className="nav-item" hidden={!isLoggedIn}>
                                 <a href="javascript:void(0)" className="nav-link" onClick={this.logout}>Logout</a>
                             </li>
 
