@@ -69,7 +69,15 @@ class AddRaspberry extends Component {
                 'Content-Type': 'application/json',
                 'Authorization': 'bearer ' + localStorage.getItem('token')
             }
-        })
+        }).then(async response => {
+            let awaitedResponse = await response.text();
+            if (response.status != 200) {
+                alert(response.status);
+            }
+            window.location.href = '/';
+        }).catch(error => {
+            alert(error);
+        });
     }
 
     changeInputField = event => {
