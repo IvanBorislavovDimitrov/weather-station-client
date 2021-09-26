@@ -53,7 +53,21 @@ class MyRaspberries extends Component {
                                 <div class="d-flex flex-column ml-2"><span>{raspberry['name']}</span></div>
                             </div>
                             <h6>{raspberry['description']}</h6>
-                            <div class="d-flex justify-content-between install mt-3"><span>{"Powered on: " + raspberry['started']}</span><span class="text-primary">Data&nbsp;<i class="fa fa-angle-right"></i></span></div>
+                            <div class="d-flex justify-content-between install mt-3">
+                                <span>{"Powered on: " + raspberry['started']}</span>
+                                <span class="text-primary">
+                                    <a href={"/raspberry/graph/" + raspberry['id']}>Graph&nbsp;</a>
+                                    <i class="fa fa-angle-right"></i>
+                                </span>
+                            </div>
+                            <div class="d-flex justify-content-between install mt-3">
+                                <div hidden={!raspberry['started']}>
+                                    <button class="btn btn-danger">Stop</button>
+                                </div>
+                                <div hidden={raspberry['started']}>
+                                    <button class="btn btn-success">Start</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 );
