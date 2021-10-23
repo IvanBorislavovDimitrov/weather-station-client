@@ -12,7 +12,9 @@ class RaspberryCharts extends Component {
     render() {
         return (
             <React.Fragment>
-                <canvas id="myChart" width="400" height="100"></canvas>
+                <canvas id="temperatureChart" width="400" height="70"></canvas>
+                <canvas id="humidityChart" width="400" height="70"></canvas>
+                <canvas id="pressureChart" width="400" height="70"></canvas>
 
             </React.Fragment>
         );
@@ -51,37 +53,120 @@ class RaspberryCharts extends Component {
             const jsonResponse = await response.json();
             console.log(jsonResponse);
 
-            const ctx = document.getElementById('myChart').getContext('2d');
             const labels = [];
             for (let i = 0; i < 24; ++i) {
                 labels.push(i.toString() + ":00");
             }
-            const temperatures = jsonResponse.map(dateWithMeasurement => dateWithMeasurement['measurement'])
-                                             .map(measurement => measurement['temperature'])
-            console.log(temperatures)
-            const datapoints = temperatures;
-            const data = {
-                labels: labels,
-                datasets: [
-                    {
-                        label: 'Temperature',
-                        data: datapoints,
-                        borderColor: "red",
-                        fill: false,
-                        cubicInterpolationMode: 'monotone',
-                        tension: 10.4
-                    }
-                ]
-            };
-            const myChart = new Chart(ctx, {
+            new Chart(document.getElementById('temperatureChart').getContext('2d'), {
                 type: 'line',
-                data: data,
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: 'Temperature',
+                            data: jsonResponse.map(dateWithMeasurement => dateWithMeasurement['measurement'])
+                            .map(measurement => measurement['temperature']),
+                            borderColor: "red",
+                            fill: false,
+                            cubicInterpolationMode: 'monotone',
+                            tension: 10.4
+                        }
+                    ]
+                },
                 options: {
                     responsive: true,
                     plugins: {
                         title: {
                             display: true,
                             text: 'Temperature Chart (UTC timezone)'
+                        },
+                    },
+                    scales: {
+                        x: {
+                            display: true,
+                            title: {
+                                display: true
+                            }
+                        },
+                        y: {
+                            display: true,
+                            title: {
+                                display: true,
+                                text: 'Temperature'
+                            },
+                            suggestedMin: -20,
+                            suggestedMax: 80
+                        }
+                    }
+                },
+            });
+
+            new Chart(document.getElementById('humidityChart').getContext('2d'), {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: 'Humidity',
+                            data: jsonResponse.map(dateWithMeasurement => dateWithMeasurement['measurement'])
+                            .map(measurement => measurement['humidity']),
+                            borderColor: "green",
+                            fill: false,
+                            cubicInterpolationMode: 'monotone',
+                            tension: 10.4
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Humidity Chart (UTC timezone)'
+                        },
+                    },
+                    scales: {
+                        x: {
+                            display: true,
+                            title: {
+                                display: true
+                            }
+                        },
+                        y: {
+                            display: true,
+                            title: {
+                                display: true,
+                                text: 'Temperature'
+                            },
+                            suggestedMin: -20,
+                            suggestedMax: 80
+                        }
+                    }
+                },
+            });
+    
+            new Chart(document.getElementById('pressureChart').getContext('2d'), {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: 'Pressure',
+                            data: jsonResponse.map(dateWithMeasurement => dateWithMeasurement['measurement'])
+                            .map(measurement => measurement['pressure']),
+                            borderColor: "blue",
+                            fill: false,
+                            cubicInterpolationMode: 'monotone',
+                            tension: 10.4
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Pressure Chart (UTC timezone)'
                         },
                     },
                     scales: {
