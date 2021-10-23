@@ -56,16 +56,16 @@ class MyRaspberries extends Component {
                             <div class="d-flex justify-content-between install mt-3">
                                 <span>{"Powered on: " + raspberry['started']}</span>
                                 <span class="text-primary">
-                                    <a href={"/raspberry/graph/" + raspberry['id']}>Graph&nbsp;</a>
+                                    <a href={"/raspberry/chart/" + raspberry['id']}>Chart&nbsp;</a>
                                     <i class="fa fa-angle-right"></i>
                                 </span>
                             </div>
                             <div class="d-flex justify-content-between install mt-3">
                                 <div hidden={!raspberry['started']}>
-                                    <button class="btn btn-danger">Stop</button>
+                                    <button onClick={() => this.stopRaspberry(raspberry['id'])} class="btn btn-danger">Stop</button>
                                 </div>
                                 <div hidden={raspberry['started']}>
-                                    <button class="btn btn-success">Start</button>
+                                    <button onClick={() => this.startRaspberry(raspberry['id'])} class="btn btn-success">Start</button>
                                 </div>
                             </div>
                         </div>
@@ -76,6 +76,15 @@ class MyRaspberries extends Component {
             });
             ReactDOM.render(elements, grid);
         })
+    }
+
+    startRaspberry = (raspberryId) => {
+        console.log('starting raspberry ' + raspberryId);
+
+    }
+
+    stopRaspberry = (raspberryId) => {
+        console.log('stopping raspberry ' + raspberryId);
     }
 }
 

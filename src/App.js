@@ -5,6 +5,7 @@ import UserRegister from "./component/register";
 import UserLogin from "./component/login";
 import AddRaspberry from "./component/add-raspberry";
 import MyRaspberries from "./component/my-raspberries";
+import RaspberryCharts from "./component/raspberry-charts";
 
 function App() {
   setTimeout(function () {
@@ -19,6 +20,7 @@ function App() {
         <Route exact path="/login" component={UserLogin} />
         <Route exact path="/add-raspberry" component={AddRaspberry} />
         <Route exact path="/my-raspberries" component={MyRaspberries} />
+        <Route path="/raspberry/chart/" component={RaspberryCharts} />
 
       </Switch>
     </BrowserRouter>
