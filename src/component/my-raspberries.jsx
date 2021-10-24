@@ -62,10 +62,10 @@ class MyRaspberries extends Component {
                             </div>
                             <div class="d-flex justify-content-between install mt-3">
                                 <div hidden={!raspberry['started']}>
-                                    <button onClick={() => this.stopRaspberry(raspberry['id'])} class="btn btn-danger">Stop</button>
+                                    <button onClick={() => this.stopRaspberry(raspberry['id'], raspberry['route'])} class="btn btn-danger">Stop</button>
                                 </div>
                                 <div hidden={raspberry['started']}>
-                                    <button onClick={() => this.startRaspberry(raspberry['id'])} class="btn btn-success">Start</button>
+                                    <button onClick={() => this.startRaspberry(raspberry['id'], raspberry['route'])} class="btn btn-success">Start</button>
                                 </div>
                             </div>
                         </div>
@@ -78,13 +78,48 @@ class MyRaspberries extends Component {
         })
     }
 
-    startRaspberry = (raspberryId) => {
-        console.log('starting raspberry ' + raspberryId);
-
+    startRaspberry = (id, route) => {
+        console.log('starting raspberry ' + id);
+        fetch(process.env.REACT_APP_URL + "/raspberry/start", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": "bearer " + localStorage.getItem("token")
+            },
+            body: JSON.stringify({
+                "id": id,
+                "route": route
+            })
+        }).then(async response => {
+            const awaitedResponse = await response.text();
+            if (response.status !== 200) {
+                alert("Raspberry start failed!");
+                return;
+            }
+            window.location.reload();
+        });
     }
 
-    stopRaspberry = (raspberryId) => {
-        console.log('stopping raspberry ' + raspberryId);
+    stopRaspberry = (id, route) => {
+        console.log('stopping raspberry ' + id);
+        fetch(process.env.REACT_APP_URL + "/raspberry/stop", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": "bearer " + localStorage.getItem("token")
+            },
+            body: JSON.stringify({
+                "id": id,
+                "route": route
+            })
+        }).then(async response => {
+            const awaitedResponse = await response.text();
+            if (response.status !== 200) {
+                alert("Raspberry stop failed!");
+                return;
+            }
+            window.location.reload();
+        });
     }
 }
 
