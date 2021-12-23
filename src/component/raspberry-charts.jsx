@@ -150,7 +150,7 @@ class RaspberryCharts extends Component {
                             display: true,
                             title: {
                                 display: true,
-                                text: 'Temperature'
+                                text: 'Humidity'
                             },
                             suggestedMin: -20,
                             suggestedMax: 80
@@ -194,7 +194,7 @@ class RaspberryCharts extends Component {
                             display: true,
                             title: {
                                 display: true,
-                                text: 'Temperature'
+                                text: 'Pressure'
                             },
                             suggestedMin: -20,
                             suggestedMax: 80
