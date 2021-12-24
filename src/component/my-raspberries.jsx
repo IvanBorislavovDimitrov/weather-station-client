@@ -68,7 +68,7 @@ class MyRaspberries extends Component {
                                     <button onClick={() => this.startRaspberry(raspberry['id'], raspberry['route'])} class="btn btn-success">Start</button>
                                 </div>
                                 <div>
-                                    <button onClick={() => window.location.href='/detection/raspberry/' + raspberry['id']} class="btn btn-warning">Add Anomaly Rule</button>
+                                    <button onClick={() => window.location.href='/anomalies/raspberry/' + raspberry['id']} class="btn btn-warning">Anomalies</button>
                                 </div>
                             </div>
                         </div>
