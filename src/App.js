@@ -7,6 +7,7 @@ import AddRaspberry from "./component/add-raspberry";
 import MyRaspberries from "./component/my-raspberries";
 import RaspberryCharts from "./component/raspberry-charts";
 import UserActivation from "./component/user-activation";
+import AddAnomalyDetectionRule from "./component/add-anomaly-detection-rule";
 
 function App() {
   setTimeout(function () {
@@ -23,6 +24,7 @@ function App() {
         <Route exact path="/my-raspberries" component={MyRaspberries} />
         <Route path="/raspberry/chart/" component={RaspberryCharts} />
         <Route path="/user/activate/" component={UserActivation} />
+        <Route path="/detection/raspberry/" component={AddAnomalyDetectionRule} />
 
       </Switch>
     </BrowserRouter>
