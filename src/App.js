@@ -9,6 +9,7 @@ import RaspberryCharts from "./component/raspberry-charts";
 import UserActivation from "./component/user-activation";
 import AddAnomalyDetectionRule from "./component/add-anomaly-detection-rule";
 import RaspberryAnomalies from "./component/raspberry-anomalies";
+import Landing from "./component/landing";
 
 function App() {
   setTimeout(function () {
@@ -19,6 +20,7 @@ function App() {
     <BrowserRouter>
       <Navbar />
       <Switch>
+      <Route exact path="/" component={Landing} />
         <Route exact path="/register" component={UserRegister} />
         <Route exact path="/login" component={UserLogin} />
         <Route exact path="/add-raspberry" component={AddRaspberry} />
