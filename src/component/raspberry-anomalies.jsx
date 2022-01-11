@@ -103,7 +103,7 @@ class RaspberryAnomalies extends Component {
 
     hrefToAddAnomaly = () => {
         const raspberryId = this.getRaspberryId();
-        window.location.href = "/anomaly/add?raspberryId=" + raspberryId;
+        window.location.href = "/detection/raspberry?raspberryId=" + raspberryId;
     }
 
     getRaspberryId = () => {

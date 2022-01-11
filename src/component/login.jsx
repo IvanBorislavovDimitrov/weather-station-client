@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
+import '../styles/login.css'
 
 class UserLogin extends Component {
     constructor(props) {
@@ -15,39 +16,44 @@ class UserLogin extends Component {
     render() {
         return (
             <React.Fragment>
-                <div className="col-md-4 mt-4 container">
-                    <div className="text-center border-light p-5">
-                        <p className="h4 mb-4">Login</p>
-                        <div className="form-group">
-                            <input
-                                onChange={this.changeInputField}
-                                name="username"
-                                type="text"
-                                className="form-control"
-                                id="usernameInputField"
-                                placeholder="Username"
-                            />
+                <div className="container register">
+                    <div className="row">
+                        <div className="col-md-3 register-left">
+                            <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
+                            <h3>Welcome</h3>
+                            <p>Do not have an account then...</p>
+                            <input onClick={} type="submit" name="" value="Register"/><br/>
                         </div>
-                        <div id="passwordField" className="form-group">
-                            <input
-                                onChange={this.changeInputField}
-                                name="password"
-                                type="password"
-                                className="form-control"
-                                id="passwordInputField"
-                                placeholder="Password"
-                            />
-                        </div>
-                        <div hidden={this.state.hideInvalidUsernamePassword} className="text-danger mb-3">Invalid username or password
+                        <div className="col-md-9 register-right">
+                            <div className="tab-content" id="myTabContent">
+                                <div className="tab-pane fade show active" id="home" role="tabpanel"
+                                     aria-labelledby="home-tab">
+                                    <h3 className="register-heading">Apply as a Employee</h3>
+                                    <div className="row register-form">
+                                        <div className="col-md-6">
+                                            <div className="form-group">
+                                                <input type="text" className="form-control" placeholder="Username"
+                                                       value=""
+                                                       onChange={this.changeInputField}
+                                                       name="username"/>
+                                            </div>
+                                            <div className="form-group">
+                                                <input type="password" className="form-control" placeholder="Password"
+                                                       onChange={this.changeInputField}
+                                                       name="password"/>
+                                            </div>
+
+                                            <input type="submit" className="btnDanger" onClick={this.redirectToForgottenPassword} value="Forgotten password"/>
+                                            <input type="submit" className="btnRegister" onClick={this.loginUser} value="Login"/>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        <button onClick={this.loginUser} className="btn btn-info btn-block">
-                            Login
-                        </button>
-                        <button onClick={this.redirectToForgottenPassword} className="btn btn-danger btn-block">
-                            Forgotten Password
-                        </button>
+                        </div>
                     </div>
+
                 </div>
+
             </React.Fragment>
         );
     }

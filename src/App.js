@@ -11,6 +11,7 @@ import AddAnomalyDetectionRule from "./component/add-anomaly-detection-rule";
 import RaspberryAnomalies from "./component/raspberry-anomalies";
 import Landing from "./component/landing";
 import MyPowerPlugs from "./component/my-power-plugs";
+import AddPowerPlug from "./component/add-power-plug";
 
 function App() {
   setTimeout(function () {
@@ -31,6 +32,7 @@ function App() {
         <Route path="/detection/raspberry/" component={AddAnomalyDetectionRule} />
         <Route path="/anomalies/raspberry/" component={RaspberryAnomalies} />
         <Route path="/raspberry/power-plugs/" component={MyPowerPlugs} />
+        <Route path="/power-plug/add/" component={AddPowerPlug} />
 
       </Switch>
     </BrowserRouter>

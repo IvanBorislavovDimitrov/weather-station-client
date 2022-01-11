@@ -11,6 +11,13 @@ class MyPowerPlugs extends Component {
     render() {
         return (
             <React.Fragment>
+                <div className="container mt-3">
+                    <div className="row">
+                        <div className="col text-center">
+                            <button onClick={this.hrefToAddPowerPlug} className="btn btn-warning">Add Plug</button>
+                        </div>
+                    </div>
+                </div>
                 <div class="container mt-5">
                     <div id="row" class="row">
 
@@ -90,7 +97,12 @@ class MyPowerPlugs extends Component {
     getRaspberryId = () => {
         const urlParams = new URLSearchParams(window.location.search);
         return  urlParams.get('raspberryId');
-    };
+    }
+
+    hrefToAddPowerPlug = () => {
+        const raspberryId = this.getRaspberryId();
+        window.location.href = "/power-plug/add?raspberryId=" + raspberryId;
+    }
 
 }
 

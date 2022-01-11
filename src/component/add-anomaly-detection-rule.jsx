@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 
 class AddAnomalyDetectionRule extends Component {
     constructor(props) {
@@ -19,7 +19,8 @@ class AddAnomalyDetectionRule extends Component {
                     <div className="text-center border-light p-5">
                         <p className="h4 mb-4">Add anomaly detection rule</p>
 
-                        <select name="ruleBelowActivated" id="ruleBelowActivated" onChange={this.changeInputField} className="custom-select form-group">
+                        <select name="ruleBelowActivated" id="ruleBelowActivated" onChange={this.changeInputField}
+                                className="custom-select form-group">
                             <option disabled="disabled" selected>Enable minimal value</option>
                             <option value="true">Enable</option>
                             <option value="false">Disable</option>
@@ -37,7 +38,8 @@ class AddAnomalyDetectionRule extends Component {
                             />
                         </div>
 
-                        <select name="ruleAboveActivated" onChange={this.changeInputField} className="custom-select form-group">
+                        <select name="ruleAboveActivated" onChange={this.changeInputField}
+                                className="custom-select form-group">
                             <option disabled="disabled" selected>Enable maximal value</option>
                             <option value="true">Enable</option>
                             <option value="false">Disable</option>
@@ -55,7 +57,8 @@ class AddAnomalyDetectionRule extends Component {
                             />
                         </div>
 
-                        <select id="typeId" name="type" onChange={this.changeInputField} className="custom-select form-group">
+                        <select id="typeId" name="type" onChange={this.changeInputField}
+                                className="custom-select form-group">
                             <option disabled="disabled" selected>Select Type</option>
                             <option value="temperature">Temperature</option>
                             <option value="pressure">Pressure</option>
@@ -75,7 +78,7 @@ class AddAnomalyDetectionRule extends Component {
         const raspberryId = currentThis.getRaspberryId();
 
         if (currentThis.state.ruleBelowActivated == null || currentThis.state.ruleAboveActivated == null || currentThis.state.ruleBelowValue == null
-            || currentThis.state.ruleAboveValue == null || currentThis.state.type == null ) {
+            || currentThis.state.ruleAboveValue == null || currentThis.state.type == null) {
             alert("Please fulfil all forms!");
             return;
         }
@@ -106,17 +109,16 @@ class AddAnomalyDetectionRule extends Component {
     }
 
     changeInputField = event => {
-        console.log(event.target.name)
-        console.log(event.target.value)
         this.setState({
             [event.target.name]: event.target.value
         });
     };
 
     getRaspberryId = () => {
-        const splitUrl = window.location.href.split('/');
-        return decodeURIComponent(splitUrl[splitUrl.length - 1]);
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get('raspberryId');
     };
+
 }
 
 export default AddAnomalyDetectionRule;
