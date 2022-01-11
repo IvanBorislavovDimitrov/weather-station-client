@@ -1,12 +1,11 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import ReactDOM from 'react-dom';
 import '../styles/grid.css';
 
 class MyRaspberries extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-        };
+        this.state = {};
     }
 
     render() {
@@ -20,6 +19,7 @@ class MyRaspberries extends Component {
             </React.Fragment>
         );
     }
+
     changeInputField = event => {
         this.setState({
             [event.target.name]: event.target.value
@@ -49,7 +49,7 @@ class MyRaspberries extends Component {
                 const rowElement = (
                     <div class="col-md-4">
                         <div class="card p-3">
-                            <div class="d-flex flex-row mb-3"><img src="/assets/img/rasp.jpg" width="70" />
+                            <div class="d-flex flex-row mb-3"><img src="/assets/img/rasp.jpg" width="70"/>
                                 <div class="d-flex flex-column ml-2"><span>{raspberry['name']}</span></div>
                             </div>
                             <h6>{raspberry['description']}</h6>
@@ -62,13 +62,24 @@ class MyRaspberries extends Component {
                             </div>
                             <div class="d-flex justify-content-between install mt-3">
                                 <div hidden={!raspberry['started']}>
-                                    <button onClick={() => this.stopRaspberry(raspberry['id'], raspberry['route'])} class="btn btn-danger">Stop</button>
+                                    <button onClick={() => this.stopRaspberry(raspberry['id'], raspberry['route'])}
+                                            class="btn btn-danger">Stop
+                                    </button>
                                 </div>
                                 <div hidden={raspberry['started']}>
-                                    <button onClick={() => this.startRaspberry(raspberry['id'], raspberry['route'])} class="btn btn-success">Start</button>
+                                    <button onClick={() => this.startRaspberry(raspberry['id'], raspberry['route'])}
+                                            class="btn btn-success">Start
+                                    </button>
                                 </div>
                                 <div>
-                                    <button onClick={() => window.location.href='/anomalies/raspberry/' + raspberry['id']} class="btn btn-warning">Anomalies</button>
+                                    <button
+                                        onClick={() => window.location.href = '/anomalies/raspberry/' + raspberry['id']}
+                                        class="btn btn-warning">Anomalies
+                                    </button>
+                                    <button
+                                        onClick={() => window.location.href = '/raspberry/power-plugs?raspberryId=' + raspberry['id']}
+                                        className="ml-2 btn btn-warning">Plugs
+                                    </button>
                                 </div>
                             </div>
                         </div>

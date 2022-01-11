@@ -1,18 +1,25 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import ReactDOM from 'react-dom';
 import '../styles/grid.css';
 
 class RaspberryAnomalies extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-        };
+        this.state = {};
     }
 
     render() {
         return (
             <React.Fragment>
+                <div className="container mt-3">
+                    <div className="row">
+                        <div className="col text-center">
+                            <button onClick={this.hrefToAddAnomaly} className="btn btn-warning">Add anomaly</button>
+                        </div>
+                    </div>
+                </div>
                 <div class="container mt-5">
+
                     <div id="row" class="row">
 
                     </div>
@@ -20,6 +27,7 @@ class RaspberryAnomalies extends Component {
             </React.Fragment>
         );
     }
+
     changeInputField = event => {
         this.setState({
             [event.target.name]: event.target.value
@@ -58,7 +66,7 @@ class RaspberryAnomalies extends Component {
                 const rowElement = (
                     <div class="col-md-4">
                         <div class="card p-3">
-                            <div class="d-flex flex-row mb-3"><img src={image} width="70" />
+                            <div class="d-flex flex-row mb-3"><img src={image} width="70"/>
                                 <div class="d-flex flex-column ml-2"><span>{anomalyRule['type']}</span></div>
                             </div>
                             <div>
@@ -73,7 +81,15 @@ class RaspberryAnomalies extends Component {
                             <div class="d-flex justify-content-between install mt-3">
 
                                 <div>
-                                    <button onClick={() => window.location.href = '/detection/raspberry/' + anomalyRule['id']} class="btn btn-danger">Remove Anomaly Rule</button>
+                                    <button
+                                        onClick={() => window.location.href = '/anomaly/edit/' + anomalyRule['id']}
+                                        className="mr-3 btn btn-warning">Edit
+                                    </button>
+
+                                    <button
+                                        onClick={() => window.location.href = '/anomaly/delete/' + anomalyRule['id']}
+                                        class="btn btn-danger">Remove
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -85,8 +101,9 @@ class RaspberryAnomalies extends Component {
         })
     }
 
-    getImage = (type) => {
-
+    hrefToAddAnomaly = () => {
+        const raspberryId = this.getRaspberryId();
+        window.location.href = "/anomaly/add?raspberryId=" + raspberryId;
     }
 
     getRaspberryId = () => {
