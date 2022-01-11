@@ -15,25 +15,24 @@ class UserLogin extends Component {
 
     render() {
         return (
-            <React.Fragment>
+            <React.Fragment>re
                 <div className="container register">
                     <div className="row">
                         <div className="col-md-3 register-left">
                             <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
                             <h3>Welcome</h3>
                             <p>Do not have an account then...</p>
-                            <input onClick={} type="submit" name="" value="Register"/><br/>
+                            <input type="submit"  onClick={this.moveToRegister} value="Register"/>
                         </div>
                         <div className="col-md-9 register-right">
                             <div className="tab-content" id="myTabContent">
                                 <div className="tab-pane fade show active" id="home" role="tabpanel"
                                      aria-labelledby="home-tab">
-                                    <h3 className="register-heading">Apply as a Employee</h3>
+                                    <h3 className="register-heading">Login</h3>
                                     <div className="row register-form">
                                         <div className="col-md-6">
                                             <div className="form-group">
                                                 <input type="text" className="form-control" placeholder="Username"
-                                                       value=""
                                                        onChange={this.changeInputField}
                                                        name="username"/>
                                             </div>
@@ -98,6 +97,11 @@ class UserLogin extends Component {
 
     redirectToForgottenPassword = () => {
         window.location.href = '/users/forgotten-password'
+    }
+
+    moveToRegister = () => {
+        window.location.href = '/register'
+
     }
 }
 

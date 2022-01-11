@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import '../styles/login.css'
 
 class Register extends Component {
@@ -20,120 +20,56 @@ class Register extends Component {
                         <div className="col-md-3 register-left">
                             <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
                             <h3>Welcome</h3>
-                            <p>You are 30 seconds away from earning your own money!</p>
-                            <input type="submit" name="" value="Login"/><br/>
+                            <p>Have an account? Then...</p>
+                            <input type="submit" onClick={this.moveToLogin} value="Login"/>
                         </div>
                         <div className="col-md-9 register-right">
                             <div className="tab-content" id="myTabContent">
                                 <div className="tab-pane fade show active" id="home" role="tabpanel"
                                      aria-labelledby="home-tab">
-                                    <h3 className="register-heading">Apply as a Employee</h3>
+                                    <h3 className="register-heading">Register</h3>
                                     <div className="row register-form">
                                         <div className="col-md-6">
                                             <div className="form-group">
-                                                <input type="text" className="form-control" placeholder="First Name *"
-                                                       value=""/>
+                                                <input type="text" className="form-control" placeholder="Email"
+                                                       name="email"
+                                                       onChange={this.changeInputField}
+                                                />
+                                            </div>
+                                            <div id="emailNameInvalidForm" className="text-danger">
+
                                             </div>
                                             <div className="form-group">
-                                                <input type="text" className="form-control" placeholder="Last Name *"
-                                                       value=""/>
+                                                <input type="text" className="form-control" placeholder="Username"
+                                                       name="username"
+                                                       onChange={this.changeInputField}
+                                                />
+                                            </div>
+                                            <div id="usernameNameInvalidForm" className="text-danger">
+
                                             </div>
                                             <div className="form-group">
-                                                <input type="password" className="form-control" placeholder="Password *"
-                                                       value=""/>
+                                                <input type="password" className="form-control" placeholder="Password"
+                                                       name="password"
+                                                       onChange={this.changeInputField}
+                                                />
+                                            </div>
+                                            <div id="passwordNameInvalidForm" className="text-danger">
+
                                             </div>
                                             <div className="form-group">
                                                 <input type="password" className="form-control"
-                                                       placeholder="Confirm Password *" value=""/>
+                                                       placeholder="Confirm Password"
+                                                       name="confirmPassword"
+                                                       onChange={this.changeInputField}
+                                                />
                                             </div>
-                                            <div className="form-group">
-                                                <div className="maxl">
-                                                    <label className="radio inline">
-                                                        <input type="radio" name="gender" value="male" checked/>
-                                                        <span> Male </span>
-                                                    </label>
-                                                    <label className="radio inline">
-                                                        <input type="radio" name="gender" value="female"/>
-                                                        <span>Female </span>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="col-md-6">
-                                            <div className="form-group">
-                                                <input type="email" className="form-control" placeholder="Your Email *"
-                                                       value=""/>
-                                            </div>
-                                            <div className="form-group">
-                                                <input type="text" minLength="10" maxLength="10" name="txtEmpPhone"
-                                                       className="form-control" placeholder="Your Phone *" value=""/>
-                                            </div>
-                                            <div className="form-group">
-                                                <select className="form-control">
-                                                    <option className="hidden" selected disabled>Please select your
-                                                        Sequrity Question
-                                                    </option>
-                                                    <option>What is your Birthdate?</option>
-                                                    <option>What is Your old Phone Number</option>
-                                                    <option>What is your Pet Name?</option>
-                                                </select>
-                                            </div>
-                                            <div className="form-group">
-                                                <input type="text" className="form-control"
-                                                       placeholder="Enter Your Answer *" value=""/>
-                                            </div>
-                                            <input type="submit" className="btnRegister" value="Register"/>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="tab-pane fade show" id="profile" role="tabpanel"
-                                     aria-labelledby="profile-tab">
-                                    <h3 className="register-heading">Apply as a Hirer</h3>
-                                    <div className="row register-form">
-                                        <div className="col-md-6">
-                                            <div className="form-group">
-                                                <input type="text" className="form-control" placeholder="First Name *"
-                                                       value=""/>
-                                            </div>
-                                            <div className="form-group">
-                                                <input type="text" className="form-control" placeholder="Last Name *"
-                                                       value=""/>
-                                            </div>
-                                            <div className="form-group">
-                                                <input type="email" className="form-control" placeholder="Email *"
-                                                       value=""/>
-                                            </div>
-                                            <div className="form-group">
-                                                <input type="text" maxLength="10" minLength="10"
-                                                       className="form-control" placeholder="Phone *" value=""/>
+                                            <div id="confirmPasswordNameInvalidForm" className="text-danger">
+
                                             </div>
 
-
-                                        </div>
-                                        <div className="col-md-6">
-                                            <div className="form-group">
-                                                <input type="password" className="form-control" placeholder="Password *"
-                                                       value=""/>
-                                            </div>
-                                            <div className="form-group">
-                                                <input type="password" className="form-control"
-                                                       placeholder="Confirm Password *" value=""/>
-                                            </div>
-                                            <div className="form-group">
-                                                <select className="form-control">
-                                                    <option className="hidden" selected disabled>Please select your
-                                                        Sequrity Question
-                                                    </option>
-                                                    <option>What is your Birthdate?</option>
-                                                    <option>What is Your old Phone Number</option>
-                                                    <option>What is your Pet Name?</option>
-                                                </select>
-                                            </div>
-                                            <div className="form-group">
-                                                <input type="text" className="form-control" placeholder="`Answer *"
-                                                       value=""/>
-                                            </div>
-                                            <input type="submit" className="btnRegister" value="Register"/>
+                                            <input onClick={this.registerUser} type="submit" className="btnRegister"
+                                                   value="Register"/>
                                         </div>
                                     </div>
                                 </div>
@@ -144,67 +80,6 @@ class Register extends Component {
                 </div>
 
 
-
-                <div className="col-md-4 mt-4 container">
-                    <div className="text-center border-light p-5">
-                        <p className="h4 mb-4">Register</p>
-                        <div id="emailField" className="form-group">
-                            <input
-                                onChange={this.changeInputField}
-                                name="email"
-                                type="text"
-                                className="form-control"
-                                id="emailInputField"
-                                placeholder="Email"
-                            />
-                            <div id="emailNameInvalidForm" class="text-danger">
-
-                            </div>
-                        </div>
-                        <div className="form-group">
-                            <input
-                                onChange={this.changeInputField}
-                                name="username"
-                                type="text"
-                                className="form-control"
-                                id="usernameInputField"
-                                placeholder="Username"
-                            />
-                            <div id="usernameNameInvalidForm" class="text-danger">
-
-                            </div>
-                        </div>
-                        <div id="passwordField" className="form-group">
-                            <input
-                                onChange={this.changeInputField}
-                                name="password"
-                                type="password"
-                                className="form-control"
-                                id="passwordInputField"
-                                placeholder="Password"
-                            />
-                            <div id="passwordNameInvalidForm" class="text-danger">
-
-                            </div>
-                        </div>
-                        <div id="confirmPasswordField" className="form-group">
-                            <input
-                                onChange={this.changeInputField}
-                                name="confirmPassword"
-                                type="password"
-                                className="form-control"
-                                id="confirmPasswordInputField"
-                                placeholder="Confirm Password"
-                            />
-                            <div id="confirmPasswordNameInvalidForm" class="text-danger">
-
-                            </div>
-                        </div>
-                        <button onClick={this.registerUser} className="btn btn-info btn-block">
-                            Register
-                            </button>
-                    </div>
-                </div>
             </React.Fragment>
         );
     }
@@ -303,6 +178,10 @@ class Register extends Component {
         if (token !== null && token !== undefined && token != "undefined") {
             window.location.href = '/';
         }
+    }
+
+    moveToLogin = () => {
+        window.location.href = '/login'
     }
 }
 
