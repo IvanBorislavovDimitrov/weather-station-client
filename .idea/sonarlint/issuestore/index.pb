@@ -3,3 +3,50 @@
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 H
 src/component/navbar.jsx,f\9\f921878bca885c11ea7fd9eb0b0bcac8dbea058d
+C
+src/styles/grid.css,8\0\80fa536b2dc71520fbc0f61e1673731365951dd3
+I
+src/component/landing.jsx,b\7\b74bb795c2dd6b961c22c9d832805e7a7e9f8ee5
+F
+src/styles/landing.css,d\0\d0beaf4b912a5b34fa470d71ee1bc0cc6d311e55
+R
+"src/component/raspberry-charts.jsx,e\b\eb757af3805cbb7349fc99973765ac33fed7a90d
+U
+%src/component/raspberry-anomalies.jsx,c\0\c043709fb5ec94d3848acc4efac38013337e315e
+\
+,src/component/add-anomaly-detection-rule.jsx,f\0\f0deecaa9cb78f13a5b92acc4df7965b95dfd244
+:
+
+src/App.js,1\e\1e43fa63aecd2127be034b3fb9d4caa172275714
+<
+src/logo.svg,6\d\6d3a8cd532ece5b4ddbd4b3b6a678ba686d300bc
+E
+public/css/styles.css,c\c\ccef9d2f34fd679a4eef74f96b59af18a3b918cc
+I
+public/css/custom-css.css,d\e\ded4a1e705cf43558fd9aa5d9b2cc652736ab7e9
+J
+public/css/coming-soon.css,d\f\df0eef227aa287a8ca4c4310b102fe713810236d
+D
+public/js/scripts.js,a\f\af8875fdbeb73772b9f09c9fdaab44d579f679b6
+H
+public/js/coming-soon.js,8\9\89afc2d866ab4b670746629832c0a2d92d5227c3
+O
+src/component/add-raspberry.jsx,1\f\1f643c579491a73da6104d319cfae3be8fc9eb69
+D
+public/manifest.json,4\2\42e89cd2213b9d5dfae4f63522702c623170d792
+P
+ src/component/my-power-plugs.jsx,3\a\3a5be89ae1aa5b4cef81dddb9a707b6391398c01
+D
+src/styles/login.css,4\4\447b759d8d24301ccdcecf7a478c42d1bc980fe1
+P
+ src/component/my-raspberries.jsx,e\3\e356505abb8e9d619b07dcb41d1b7914676e233d
+Q
+!src/component/user-activation.jsx,2\7\27559e0a8a0ef2b9fa56adf430404a097130dc74
+J
+src/component/register.jsx,0\6\061352580d6f160d7ee8ba60d7d4ea4b6e579e9b
+;
+src/App.css,a\a\aa7165aefcf8ee3d73539e99ab007daf1aa18d8d
+P
+ src/component/add-power-plug.jsx,a\8\a8ab6a2401b3ebb6574630acd66e96ea47c9b36c
+G
+src/component/login.jsx,d\d\dda3afa05f1ee53b4195a82990f9930f6e213633
