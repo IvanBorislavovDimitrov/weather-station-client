@@ -17,7 +17,7 @@ class Navbar extends Component {
 
         return (
             <React.Fragment>
-                <nav className="navbar navbar-expand-lg navbar-dark bg-primary w-100">
+                <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                     <a className="navbar-brand" href="/">Your weather</a>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
@@ -38,7 +38,7 @@ class Navbar extends Component {
                             </li>
 
                             <li className="nav-item" hidden={!isLoggedIn}>
-                                <a href="/my-raspberries" className="nav-link">My raspberry</a>
+                                <a href="/my-raspberries" className="nav-link">My raspbereis</a>
                             </li>
 
                             <li className="nav-item" hidden={!isLoggedIn}>

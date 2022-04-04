@@ -1,5 +1,8 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import '../styles/landing.css';
+import '../styles/boxicons.css';
+import '../styles/animations.css';
+import '../styles/transformations.css';
 
 class Landing extends Component {
     constructor(props) {
@@ -17,23 +20,23 @@ class Landing extends Component {
                                 <div className="text-center text-white">
                                     <h1 className="mb-5">Subscribe to our weekly newspaper for sensors!</h1>
                                     <form className="form-subscribe" id="contactForm"
-                                          data-sb-form-api-token="API_TOKEN">
+                                        data-sb-form-api-token="API_TOKEN">
                                         <div className="row">
                                             <div className="col">
                                                 <input className="form-control form-control-lg" id="emailAddress"
-                                                       type="email" placeholder="Email Address"
-                                                       data-sb-validations="required,email"/>
+                                                    type="email" placeholder="Email Address"
+                                                    data-sb-validations="required,email" />
                                                 <div className="invalid-feedback text-white"
-                                                     data-sb-feedback="emailAddress:required">Email Address is required.
+                                                    data-sb-feedback="emailAddress:required">Email Address is required.
                                                 </div>
                                                 <div className="invalid-feedback text-white"
-                                                     data-sb-feedback="emailAddress:email">Email Address Email is not
+                                                    data-sb-feedback="emailAddress:email">Email Address Email is not
                                                     valid.
                                                 </div>
                                             </div>
                                             <div className="col-auto">
                                                 <button className="btn btn-primary btn-lg disabled" id="submitButton"
-                                                        type="submit">Submit
+                                                    type="submit">Submit
                                                 </button>
                                             </div>
                                         </div>
@@ -42,7 +45,7 @@ class Landing extends Component {
                                                 <div className="fw-bolder">Form submission successful!</div>
                                                 <p>To activate this form, sign up at</p>
                                                 <a className="text-white"
-                                                   href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                                                    href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
                                             </div>
                                         </div>
                                         <div className="d-none" id="submitErrorMessage">
@@ -66,6 +69,15 @@ class Landing extends Component {
                                         size!</p>
                                 </div>
                             </div>
+
+                            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                                <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+                                    <div class="icon"><i class="bx bxl-dribbble"></i></div>
+                                    <h4 class="title"><a href="">Lorem Ipsum</a></h4>
+                                    <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+                                </div>
+                            </div>
+
                             <div className="col-lg-4">
                                 <div className="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
                                     <div className="features-icons-icon d-flex"><i

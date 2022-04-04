@@ -220,14 +220,16 @@ class RaspberryCharts extends Component {
         const dateValue = document.getElementById("chooseDate").value;
 
         const startPeriod = new Date(dateValue);
-        startPeriod.setHours(0);
+        const offset = -(new Date().getTimezoneOffset() / 60)
+
+        startPeriod.setHours(offset);
         startPeriod.setMinutes(0);
         startPeriod.setSeconds(0);
         startPeriod.setMilliseconds(0);
 
         const endPeriod = new Date();
         endPeriod.setTime(startPeriod.getTime() + (24 * 60 * 60 * 1000));
-        endPeriod.setHours(0);
+        endPeriod.setHours(offset);
         endPeriod.setMinutes(0);
         endPeriod.setSeconds(0);
         endPeriod.setMilliseconds(0);

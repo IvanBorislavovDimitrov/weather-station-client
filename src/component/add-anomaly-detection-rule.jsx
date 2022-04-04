@@ -26,7 +26,6 @@ class AddAnomalyDetectionRule extends Component {
                             <option value="false">Disable</option>
                         </select>
 
-
                         <div className="form-group">
                             <input
                                 onChange={this.changeInputField}
