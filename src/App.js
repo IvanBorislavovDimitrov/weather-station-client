@@ -12,6 +12,7 @@ import RaspberryAnomalies from "./component/raspberry-anomalies";
 import Landing from "./component/landing";
 import MyPowerPlugs from "./component/my-power-plugs";
 import AddPowerPlug from "./component/add-power-plug";
+import EditRaspberry from "./component/edit-raspberry";
 
 function App() {
   setTimeout(function () {
@@ -33,6 +34,7 @@ function App() {
         <Route path="/anomalies/raspberry/" component={RaspberryAnomalies} />
         <Route path="/raspberry/power-plugs/" component={MyPowerPlugs} />
         <Route path="/power-plug/add/" component={AddPowerPlug} />
+        <Route path="/raspberry/edit/" component={EditRaspberry} />
 
       </Switch>
     </BrowserRouter>

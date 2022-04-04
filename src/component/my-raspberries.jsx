@@ -57,7 +57,8 @@ class MyRaspberries extends Component {
                                 <span>{"Powered on: " + raspberry['started']}</span>
                                 <span class="text-primary">
                                     <a href={"/raspberry/chart/" + raspberry['id']}>Chart&nbsp;</a>
-                                    <i class="fa fa-angle-right"></i>
+                                    <br></br>
+                                    <a href={"/raspberry/edit/" + raspberry['id']}>Edit&nbsp;</a>
                                 </span>
                             </div>
                             <div class="d-flex justify-content-between install mt-3">
