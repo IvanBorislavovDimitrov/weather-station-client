@@ -57,14 +57,14 @@ class EditRaspberry extends Component {
 
     editRaspberry = () => {
         const currentThis = this;
-        const raspberryCreateBody = {
+        const raspberryUpdateBody = {
             name: currentThis.state.name,
             route: currentThis.state.route,
             description: currentThis.state.description
         }
-        fetch(process.env.REACT_APP_URL + "/raspberry", {
+        fetch(process.env.REACT_APP_URL + "/raspberry/" + this.getRaspberryId(), {
             method: "PUT",
-            body: JSON.stringify(raspberryCreateBody),
+            body: JSON.stringify(raspberryUpdateBody),
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': 'bearer ' + localStorage.getItem('token')
@@ -74,7 +74,7 @@ class EditRaspberry extends Component {
             if (response.status != 200) {
                 alert(response.status);
             }
-            window.location.href = '/';
+            window.location.reload();
         }).catch(error => {
             alert(error);
         });
@@ -104,6 +104,11 @@ class EditRaspberry extends Component {
             document.getElementById('raspberryNameId').value = raspberry['name'];
             document.getElementById('raspberryRouteId').value = raspberry['route'];
             document.getElementById('raspberryDescriptionId').value = raspberry['description'];
+            this.setState({
+                name: raspberry['name'],
+                route: raspberry['route'],
+                description: raspberry['description']
+            })
         })
     }
 
