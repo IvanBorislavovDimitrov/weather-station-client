@@ -82,7 +82,6 @@ class EditPowerPlug extends Component {
 
     editPowerPlug = () => {
         const currentThis = this;
-        const raspberryId = currentThis.getRaspberryId();
 
         if (currentThis.state.actionOnAboveAnomaly == null || currentThis.state.actionOnBelowAnomaly == null ||
             currentThis.state.name == null || currentThis.state.type == null || currentThis.state.description == null
@@ -96,7 +95,6 @@ class EditPowerPlug extends Component {
             name: currentThis.state.name,
             description: currentThis.state.description,
             route: currentThis.state.route,
-            raspberryId: raspberryId,
             type: currentThis.state.type,
         }
         fetch(process.env.REACT_APP_URL + "/power-plug/" + currentThis.getPowerPlugId(), {
@@ -164,10 +162,6 @@ class EditPowerPlug extends Component {
         return "TURN_OFF";  
     }
 
-    getRaspberryId = () => {
-        const urlParams = new URLSearchParams(window.location.search);
-        return urlParams.get('raspberryId');
-    };
 
 }
 
