@@ -54,31 +54,31 @@ class Navbar extends Component {
     }
 
     componentDidMount() {
-        // this.isStillLoggedIn();
+        this.isStillLoggedIn();
         this.isAdmin();
     }
 
-    // isStillLoggedIn = () => {
-    //     const token = localStorage.getItem('token');
-    //     if (token == undefined || token == null && token != "undefined") {
-    //         return;
-    //     }
-    //     fetch(process.env.REACT_APP_URL + '/validate', {
-    //         method: 'GET',
-    //         headers: {
-    //             'Authorization': 'Bearer: ' + token
-    //         }
-    //     }).then(async response => {
-    //         await response.text();
-    //         if (response.status !== 200) {
-    //             localStorage.removeItem('token');
-    //             window.location.reload();
-    //         }
-    //     }).catch(error => {
-    //         console.log(error);
-    //         localStorage.removeItem('token');
-    //     });
-    // }
+    isStillLoggedIn = () => {
+        const token = localStorage.getItem('token');
+        if (token == undefined || token == null && token != "undefined") {
+            return;
+        }
+        fetch(process.env.REACT_APP_URL + '/validate', {
+            method: 'GET',
+            headers: {
+                'Authorization': 'Bearer: ' + token
+            }
+        }).then(async response => {
+            await response.text();
+            if (response.status !== 200) {
+                localStorage.removeItem('token');
+                window.location.reload();
+            }
+        }).catch(error => {
+            console.log(error);
+            localStorage.removeItem('token');
+        });
+    }
 
     logout = () => {
         localStorage.removeItem('token');
