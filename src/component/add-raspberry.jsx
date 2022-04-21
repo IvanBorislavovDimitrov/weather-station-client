@@ -74,7 +74,7 @@ class AddRaspberry extends Component {
             if (response.status != 200) {
                 alert(response.status);
             }
-            window.location.href = '/';
+            window.location.href = '/my-raspberries';
         }).catch(error => {
             alert(error);
         });

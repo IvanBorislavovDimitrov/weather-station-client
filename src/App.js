@@ -14,6 +14,7 @@ import MyPowerPlugs from "./component/my-power-plugs";
 import AddPowerPlug from "./component/add-power-plug";
 import EditRaspberry from "./component/edit-raspberry";
 import EditPowerPlug from "./component/edit-power-plug";
+import DeletePowerPlug from "./component/delete-power-plug";
 
 function App() {
   setTimeout(function () {
@@ -37,6 +38,7 @@ function App() {
         <Route path="/power-plug/add/" component={AddPowerPlug} />
         <Route path="/raspberry/edit/" component={EditRaspberry} />
         <Route path="/power-plug/edit/" component={EditPowerPlug} />
+        <Route path="/power-plug/delete/" component={DeletePowerPlug} />
 
       </Switch>
     </BrowserRouter>
