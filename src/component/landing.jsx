@@ -24,7 +24,7 @@ class Landing extends Component {
                                         <div className="row">
                                             <div className="col">
                                                 <input className="form-control form-control-lg" id="emailAddress"
-                                                    type="email" placeholder="Email Address"
+                                                    type="email" placeholder="Имейл адрес"
                                                     data-sb-validations="required,email" />
                                                 <div className="invalid-feedback text-white"
                                                     data-sb-feedback="emailAddress:required">Email Address is required.
