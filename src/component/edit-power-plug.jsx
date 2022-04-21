@@ -90,7 +90,7 @@ class EditPowerPlug extends Component {
             alert("Please fulfil all forms!");
             return;
         }
-        const addPowerPlugRequestBody = {
+        const editPowerPlugRequestBody = {
             actionOnAboveAnomaly: currentThis.state.actionOnAboveAnomaly,
             actionOnBelowAnomaly: currentThis.state.actionOnBelowAnomaly,
             name: currentThis.state.name,
@@ -99,9 +99,9 @@ class EditPowerPlug extends Component {
             raspberryId: raspberryId,
             type: currentThis.state.type,
         }
-        fetch(process.env.REACT_APP_URL + "/power-plug", {
-            method: "POST",
-            body: JSON.stringify(addPowerPlugRequestBody),
+        fetch(process.env.REACT_APP_URL + "/power-plug/" + currentThis.getPowerPlugId(), {
+            method: "PUT",
+            body: JSON.stringify(editPowerPlugRequestBody),
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': 'bearer ' + localStorage.getItem('token')
@@ -161,8 +161,13 @@ class EditPowerPlug extends Component {
         if (isOn == "on") {
             return "TURN_ON";
         }
-        return "TURN_OFF";
+        return "TURN_OFF";  
     }
+
+    getRaspberryId = () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get('raspberryId');
+    };
 
 }
 

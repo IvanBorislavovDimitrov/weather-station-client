@@ -74,7 +74,7 @@ class MyPowerPlugs extends Component {
                             <div className="d-flex justify-content-between install mt-3">
                                 <div>
                                     <button
-                                        onClick={() => window.location.href = '/power-plug/edit/' + powerPlug['id']}
+                                        onClick={() => window.location.href = '/power-plug/edit/' + powerPlug['id'] + "?raspberryId=" + powerPlug['raspberryId']}
                                         className="mr-3 btn btn-warning">Edit
                                     </button>
                                     <button
