@@ -16,6 +16,7 @@ import EditRaspberry from "./component/edit-raspberry";
 import EditPowerPlug from "./component/edit-power-plug";
 import DeletePowerPlug from "./component/delete-power-plug";
 import EditAnomalyDetectionRule from "./component/edit-anomaly-detection-rule";
+import DeleteAnomalyDetectionRule from "./component/delete-anomaly-detection-rule";
 
 function App() {
   setTimeout(function () {
@@ -41,6 +42,7 @@ function App() {
         <Route path="/power-plug/edit/" component={EditPowerPlug} />
         <Route path="/power-plug/delete/" component={DeletePowerPlug} />
         <Route path="/anomaly/edit/" component={EditAnomalyDetectionRule} />
+        <Route path="/anomaly/delete/" component={DeleteAnomalyDetectionRule} />
 
       </Switch>
     </BrowserRouter>
