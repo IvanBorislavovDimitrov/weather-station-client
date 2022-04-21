@@ -54,32 +54,32 @@ class MyRaspberries extends Component {
                             </div>
                             <h6>{raspberry['description']}</h6>
                             <div class="d-flex justify-content-between install mt-3">
-                                <span>{"Powered on: " + raspberry['started']}</span>
+                                <span>{"Включено: " + raspberry['started']}</span>
                                 <span class="text-primary">
-                                    <a href={"/raspberry/chart/" + raspberry['id']}>Chart&nbsp;</a>
+                                    <a href={"/raspberry/chart/" + raspberry['id']}>Графика&nbsp;</a>
                                     <br></br>
-                                    <a href={"/raspberry/edit/" + raspberry['id']}>Edit&nbsp;</a>
+                                    <a href={"/raspberry/edit/" + raspberry['id']}>Редакция&nbsp;</a>
                                 </span>
                             </div>
                             <div class="d-flex justify-content-between install mt-3">
                                 <div hidden={!raspberry['started']}>
                                     <button onClick={() => this.stopRaspberry(raspberry['id'], raspberry['route'])}
-                                            class="btn btn-danger">Stop
+                                            class="btn btn-danger">Спри
                                     </button>
                                 </div>
                                 <div hidden={raspberry['started']}>
                                     <button onClick={() => this.startRaspberry(raspberry['id'], raspberry['route'])}
-                                            class="btn btn-success">Start
+                                            class="btn btn-success">Старт
                                     </button>
                                 </div>
                                 <div>
                                     <button
                                         onClick={() => window.location.href = '/anomalies/raspberry/' + raspberry['id']}
-                                        class="btn btn-warning">Anomalies
+                                        class="btn btn-warning">Отклонения
                                     </button>
                                     <button
                                         onClick={() => window.location.href = '/raspberry/power-plugs?raspberryId=' + raspberry['id']}
-                                        className="ml-2 btn btn-warning">Plugs
+                                        className="ml-2 btn btn-warning">Контакти
                                     </button>
                                 </div>
                             </div>

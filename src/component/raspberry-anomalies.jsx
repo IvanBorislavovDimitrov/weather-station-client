@@ -14,7 +14,7 @@ class RaspberryAnomalies extends Component {
                 <div className="container mt-3">
                     <div className="row">
                         <div className="col text-center">
-                            <button onClick={this.hrefToAddAnomaly} className="btn btn-warning">Add anomaly</button>
+                            <button onClick={this.hrefToAddAnomaly} className="btn btn-warning">Известия за отклонение</button>
                         </div>
                     </div>
                 </div>
@@ -67,28 +67,26 @@ class RaspberryAnomalies extends Component {
                     <div class="col-md-4">
                         <div class="card p-3">
                             <div class="d-flex flex-row mb-3"><img src={image} width="70"/>
-                                <div class="d-flex flex-column ml-2"><span>{anomalyRule['type']}</span></div>
+                                <div class="d-flex flex-column ml-2"><span>{this.tranlate(anomalyRule['type'])}</span></div>
                             </div>
                             <div>
-                                <div>{"Rule above activated: " + anomalyRule['ruleBelowActivated']}</div>
-                                <div>{"Rule below activated: " + anomalyRule['ruleAboveActivated']}</div>
-                                <div>{"Rule Min Value: " + anomalyRule['valueBelow']}</div>
-                                <div>{"Rule Max Value: " + anomalyRule['valueAbove']}</div>
+                                <div>{"Правило за долно отклониение: " + anomalyRule['ruleBelowActivated']}</div>
+                                <div>{"Правило за горно отклониение: " + anomalyRule['ruleAboveActivated']}</div>
+                                <div>{"Минимална стойност: " + anomalyRule['valueBelow']}</div>
+                                <div>{"Максимална стойност: " + anomalyRule['valueAbove']}</div>
                                 <span class="text-primary">
                                     <i class="fa fa-angle-right"></i>
                                 </span>
                             </div>
                             <div class="d-flex justify-content-between install mt-3">
-
                                 <div>
                                     <button
                                         onClick={() => window.location.href = '/anomaly/edit/' + anomalyRule['id']}
-                                        className="mr-3 btn btn-warning">Edit
+                                        className="mr-3 btn btn-warning">Редактирай
                                     </button>
-
                                     <button
                                         onClick={() => window.location.href = '/anomaly/delete/' + anomalyRule['id']}
-                                        class="btn btn-danger">Remove
+                                        class="btn btn-danger">Премахни
                                     </button>
                                 </div>
                             </div>
@@ -109,7 +107,19 @@ class RaspberryAnomalies extends Component {
     getRaspberryId = () => {
         const splitUrl = window.location.href.split('/');
         return decodeURIComponent(splitUrl[splitUrl.length - 1]);
-    };
+    }
+
+    tranlate = (type) => {
+        switch (type) {
+            case "temperature": 
+                return "Температура"
+            case "humidity": 
+                return "Влажност" 
+            case "pressure": 
+                return "Налягане"
+        }
+    }
+
 }
 
 export default RaspberryAnomalies;

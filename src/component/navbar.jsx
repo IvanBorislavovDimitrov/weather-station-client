@@ -18,7 +18,7 @@ class Navbar extends Component {
         return (
             <React.Fragment>
                 <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-                    <a className="navbar-brand" href="/">Your weather</a>
+                    <a className="navbar-brand" href="/">Моето време</a>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
@@ -27,22 +27,22 @@ class Navbar extends Component {
                         <ul class="navbar-nav w-100">
 
                             <li className="nav-item" hidden={isLoggedIn}>
-                                <a className="nav-link" href="/login">Login</a>
+                                <a className="nav-link" href="/login">Вход</a>
                             </li>
                             <li className="nav-item" hidden={isLoggedIn}>
-                                <a className="nav-link" href="/register">Register</a>
+                                <a className="nav-link" href="/register">Регистрация</a>
                             </li>
 
                             <li className="nav-item" hidden={!isLoggedIn}>
-                                <a href="/add-raspberry" className="nav-link">Add raspberry</a>
+                                <a href="/add-raspberry" className="nav-link">Добави станция</a>
                             </li>
 
                             <li className="nav-item" hidden={!isLoggedIn}>
-                                <a href="/my-raspberries" className="nav-link">My raspbereis</a>
+                                <a href="/my-raspberries" className="nav-link">Моите станции</a>
                             </li>
 
                             <li className="nav-item" hidden={!isLoggedIn}>
-                                <a href="javascript:void(0)" className="nav-link" onClick={this.logout}>Logout</a>
+                                <a href="javascript:void(0)" className="nav-link" onClick={this.logout}>Излез</a>
                             </li>
 
                         </ul>

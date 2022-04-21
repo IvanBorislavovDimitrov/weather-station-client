@@ -15,7 +15,7 @@ class EditRaspberry extends Component {
             <React.Fragment>
                 <div className="col-md-4 mt-4 container">
                     <div className="text-center border-light p-5">
-                        <p className="h4 mb-4">Edit raspberry</p>
+                        <p className="h4 mb-4">Редактирай станция</p>
                         <div id="raspberryField" className="form-group">
                             <input
                                 onChange={this.changeInputField}
@@ -47,7 +47,7 @@ class EditRaspberry extends Component {
                             />
                         </div>
                         <button onClick={this.editRaspberry} className="btn btn-info btn-block">
-                            Edit raspberry
+                            Редактирай
                         </button>
                     </div>
                 </div>

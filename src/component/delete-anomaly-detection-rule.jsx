@@ -17,7 +17,7 @@ class DeleteAnomalyDetectionRule extends Component {
             <React.Fragment>
                 <div className="col-md-4 mt-4 container">
                     <div className="text-center border-light p-5">
-                        <p className="h4 mb-4">Delete anomaly detection rule</p>
+                        <p className="h4 mb-4">Изтрий известие за отклонение</p>
 
                         <select disabled="disabled" name="ruleBelowActivated" id="ruleBelowActivated" onChange={this.changeInputField}
                                 className="custom-select form-group">
@@ -67,7 +67,7 @@ class DeleteAnomalyDetectionRule extends Component {
                             <option value="humidity">Humidity</option>
                         </select>
                         <button onClick={this.deleteAnomalyDetectionRule} className="btn btn-danger btn-block">
-                            Delete Anomaly Detection Rule
+                            Изтрий
                         </button>
                     </div>
                 </div>

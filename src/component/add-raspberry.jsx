@@ -15,7 +15,7 @@ class AddRaspberry extends Component {
             <React.Fragment>
                 <div className="col-md-4 mt-4 container">
                     <div className="text-center border-light p-5">
-                        <p className="h4 mb-4">Add raspberry</p>
+                        <p className="h4 mb-4">Добави станция</p>
                         <div id="raspberryField" className="form-group">
                             <input
                                 onChange={this.changeInputField}
@@ -23,7 +23,7 @@ class AddRaspberry extends Component {
                                 type="text"
                                 className="form-control"
                                 id="raspberryNameId"
-                                placeholder="Name"
+                                placeholder="Име"
                             />
                         </div>
                         <div id="routeField" className="form-group">
@@ -33,7 +33,7 @@ class AddRaspberry extends Component {
                                 type="text"
                                 className="form-control"
                                 id="raspberryRouteId"
-                                placeholder="Route"
+                                placeholder="Адрес"
                             />
                         </div>
                         <div id="raspberryDescription" className="form-group">
@@ -43,11 +43,11 @@ class AddRaspberry extends Component {
                                 type="text"
                                 className="form-control"
                                 id="raspberryDescriptionId"
-                                placeholder="Description"
+                                placeholder="Описание"
                             />
                         </div>
                         <button onClick={this.addRaspberry} className="btn btn-info btn-block">
-                            Add raspberry
+                            Добави
                             </button>
                     </div>
                 </div>

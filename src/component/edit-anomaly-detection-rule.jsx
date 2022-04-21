@@ -17,7 +17,7 @@ class EditAnomalyDetectionRule extends Component {
             <React.Fragment>
                 <div className="col-md-4 mt-4 container">
                     <div className="text-center border-light p-5">
-                        <p className="h4 mb-4">Edit anomaly detection rule</p>
+                        <p className="h4 mb-4">Активирай отклонение за долна граница</p>
 
                         <select name="ruleBelowActivated" id="ruleBelowActivated" onChange={this.changeInputField}
                                 className="custom-select form-group">
@@ -67,7 +67,7 @@ class EditAnomalyDetectionRule extends Component {
                             <option value="humidity">Humidity</option>
                         </select>
                         <button onClick={this.editAnomalyDetectionRule} className="btn btn-info btn-block">
-                            Edit Anomaly Detection Rule
+                            Редактирай
                         </button>
                     </div>
                 </div>

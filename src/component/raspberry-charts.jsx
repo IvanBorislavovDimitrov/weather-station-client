@@ -16,7 +16,7 @@ class RaspberryCharts extends Component {
         return (
             <React.Fragment>
                 <div class="d-flex justify-content-center md-4 mt-4">
-                    <label className="mr-3 ml-3" for="Choose">Choose date: </label>
+                    <label className="mr-3 ml-3" for="Choose">Избери дата: </label>
                     <input onChange={this.calculateChartsForDay} type="date" id="chooseDate" name="Choose date" />
                 </div>
 
@@ -77,7 +77,7 @@ class RaspberryCharts extends Component {
                     labels: labels,
                     datasets: [
                         {
-                            label: 'Temperature',
+                            label: 'Температура',
                             data: jsonResponse.map(dateWithMeasurement => dateWithMeasurement['measurement'])
                                 .map(measurement => measurement['temperature']),
                             borderColor: "red",
@@ -92,7 +92,7 @@ class RaspberryCharts extends Component {
                     plugins: {
                         title: {
                             display: true,
-                            text: 'Temperature Chart (UTC timezone)'
+                            text: 'Графика температура (UTC времева зона)'
                         },
                     },
                     scales: {
@@ -106,7 +106,7 @@ class RaspberryCharts extends Component {
                             display: true,
                             title: {
                                 display: true,
-                                text: 'Temperature'
+                                text: 'Температура'
                             },
                             suggestedMin: -20,
                             suggestedMax: 80
@@ -121,7 +121,7 @@ class RaspberryCharts extends Component {
                     labels: labels,
                     datasets: [
                         {
-                            label: 'Humidity',
+                            label: 'Влажност',
                             data: jsonResponse.map(dateWithMeasurement => dateWithMeasurement['measurement'])
                                 .map(measurement => measurement['humidity']),
                             borderColor: "green",
@@ -136,7 +136,7 @@ class RaspberryCharts extends Component {
                     plugins: {
                         title: {
                             display: true,
-                            text: 'Humidity Chart (UTC timezone)'
+                            text: 'Влажност графика (UTC времева зона)'
                         },
                     },
                     scales: {
@@ -150,7 +150,7 @@ class RaspberryCharts extends Component {
                             display: true,
                             title: {
                                 display: true,
-                                text: 'Humidity'
+                                text: 'Влажност'
                             },
                             suggestedMin: -20,
                             suggestedMax: 80
@@ -165,7 +165,7 @@ class RaspberryCharts extends Component {
                     labels: labels,
                     datasets: [
                         {
-                            label: 'Pressure',
+                            label: 'Налягане',
                             data: jsonResponse.map(dateWithMeasurement => dateWithMeasurement['measurement'])
                                 .map(measurement => measurement['pressure']),
                             borderColor: "blue",
@@ -180,7 +180,7 @@ class RaspberryCharts extends Component {
                     plugins: {
                         title: {
                             display: true,
-                            text: 'Pressure Chart (UTC timezone)'
+                            text: 'Налягане графика (UTC времева зона)'
                         },
                     },
                     scales: {
@@ -194,7 +194,7 @@ class RaspberryCharts extends Component {
                             display: true,
                             title: {
                                 display: true,
-                                text: 'Pressure'
+                                text: 'Налягане'
                             },
                             suggestedMin: -20,
                             suggestedMax: 80

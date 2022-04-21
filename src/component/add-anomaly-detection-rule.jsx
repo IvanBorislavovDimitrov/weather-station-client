@@ -17,11 +17,11 @@ class AddAnomalyDetectionRule extends Component {
             <React.Fragment>
                 <div className="col-md-4 mt-4 container">
                     <div className="text-center border-light p-5">
-                        <p className="h4 mb-4">Add anomaly detection rule</p>
+                        <p className="h4 mb-4">Добави отклонение</p>
 
                         <select name="ruleBelowActivated" id="ruleBelowActivated" onChange={this.changeInputField}
                                 className="custom-select form-group">
-                            <option disabled="disabled" selected>Enable minimal value</option>
+                            <option disabled="disabled" selected>Активирай минимална стойност</option>
                             <option value="true">Enable</option>
                             <option value="false">Disable</option>
                         </select>
@@ -40,7 +40,7 @@ class AddAnomalyDetectionRule extends Component {
 
                         <select name="ruleAboveActivated" onChange={this.changeInputField}
                                 className="custom-select form-group">
-                            <option disabled="disabled" selected>Enable maximal value</option>
+                            <option disabled="disabled" selected>Активирай максимална стойност</option>
                             <option value="true">Enable</option>
                             <option value="false">Disable</option>
                         </select>
@@ -59,7 +59,7 @@ class AddAnomalyDetectionRule extends Component {
 
                         <select id="typeId" name="type" onChange={this.changeInputField}
                                 className="custom-select form-group">
-                            <option disabled="disabled" selected>Select Type</option>
+                            <option disabled="disabled" selected>Избери тип</option>
                             <option value="temperature">Temperature</option>
                             <option value="pressure">Pressure</option>
                             <option value="humidity">Humidity</option>

@@ -19,19 +19,19 @@ class Register extends Component {
                     <div className="row">
                         <div className="col-md-3 register-left">
                             <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
-                            <h3>Welcome</h3>
-                            <p>Have an account? Then...</p>
-                            <input type="submit" onClick={this.moveToLogin} value="Login"/>
+                            <h3>Здравей</h3>
+                            <p>Имаш акаунт? Тогава...</p>
+                            <input type="submit" onClick={this.moveToLogin} value="Вход"/>
                         </div>
                         <div className="col-md-9 register-right">
                             <div className="tab-content" id="myTabContent">
                                 <div className="tab-pane fade show active" id="home" role="tabpanel"
                                      aria-labelledby="home-tab">
-                                    <h3 className="register-heading">Register</h3>
+                                    <h3 className="register-heading">Регистрация</h3>
                                     <div className="row register-form">
                                         <div className="col-md-6">
                                             <div className="form-group">
-                                                <input type="text" className="form-control" placeholder="Email"
+                                                <input type="text" className="form-control" placeholder="Имейл"
                                                        name="email"
                                                        onChange={this.changeInputField}
                                                 />
@@ -40,7 +40,7 @@ class Register extends Component {
 
                                             </div>
                                             <div className="form-group">
-                                                <input type="text" className="form-control" placeholder="Username"
+                                                <input type="text" className="form-control" placeholder="Потребителско име"
                                                        name="username"
                                                        onChange={this.changeInputField}
                                                 />
@@ -49,7 +49,7 @@ class Register extends Component {
 
                                             </div>
                                             <div className="form-group">
-                                                <input type="password" className="form-control" placeholder="Password"
+                                                <input type="password" className="form-control" placeholder="Парола"
                                                        name="password"
                                                        onChange={this.changeInputField}
                                                 />
@@ -59,7 +59,7 @@ class Register extends Component {
                                             </div>
                                             <div className="form-group">
                                                 <input type="password" className="form-control"
-                                                       placeholder="Confirm Password"
+                                                       placeholder="Потвърди парола"
                                                        name="confirmPassword"
                                                        onChange={this.changeInputField}
                                                 />

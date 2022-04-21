@@ -18,7 +18,7 @@ class DeletePowerPlug extends Component {
             <React.Fragment>
                 <div className="col-md-4 mt-4 container">
                     <div className="text-center border-light p-5">
-                        <p className="h4 mb-4">Edit power plug</p>
+                        <p className="h4 mb-4">Изтрий контакт</p>
                         <div className="form-group">
                             <input
                                 onChange={this.changeInputField}
@@ -75,7 +75,7 @@ class DeletePowerPlug extends Component {
                             <option value="HUMIDITY">Humidity</option>
                         </select>
                         <button onClick={this.deletePowerPlug} className="btn btn-danger btn-block">
-                            Delete Power Plug
+                            Изтрий
                         </button>
                     </div>
                 </div>

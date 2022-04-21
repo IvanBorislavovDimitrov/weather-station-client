@@ -18,7 +18,7 @@ class Landing extends Component {
                         <div className="row justify-content-center">
                             <div className="col-xl-6">
                                 <div className="text-center text-white">
-                                    <h1 className="mb-5">Subscribe to our weekly newspaper for sensors!</h1>
+                                    <h1 className="mb-5">Абонарий се за най-актуалните новини за приложението!</h1>
                                     <form className="form-subscribe" id="contactForm"
                                         data-sb-form-api-token="API_TOKEN">
                                         <div className="row">
@@ -36,7 +36,7 @@ class Landing extends Component {
                                             </div>
                                             <div className="col-auto">
                                                 <button className="btn btn-primary btn-lg disabled" id="submitButton"
-                                                    type="submit">Submit
+                                                    type="submit">Изпрати
                                                 </button>
                                             </div>
                                         </div>
@@ -57,43 +57,36 @@ class Landing extends Component {
                         </div>
                     </div>
                 </header>
-                <section className="features-icons bg-light text-center">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-lg-4">
-                                <div className="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                                    <div className="features-icons-icon d-flex"><i
-                                        className="bi bi-window m-auto text-primary"></i></div>
-                                    <h3>Fully Responsive</h3>
-                                    <p className="lead mb-0">This theme will look great on any device, no matter the
-                                        size!</p>
+                <section class="page-section" id="services">
+                    <div class="container px-4 px-lg-5">
+                        <h2 class="text-center mt-0">Изпробвай системата за измерване на метеорологичните условия вкъщи</h2>
+                        <div class="row gx-4 gx-lg-5">
+                            <div class="col-lg-3 col-md-6 text-center">
+                                <div class="mt-5">
+                                    <div class="mb-2"><i className="bi-gem fs-1 text-primary"></i></div>
+                                    <h3 class="h4 mb-2">Най-точните измервания</h3>
+                                    <p class="text-muted mb-0">Нашите сензори и умни контакти са винаги точни!</p>
                                 </div>
                             </div>
-
-                            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                                <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-                                    <div class="icon"><i class="bx bxl-dribbble"></i></div>
-                                    <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-                                    <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+                            <div class="col-lg-3 col-md-6 text-center">
+                                <div class="mt-5">
+                                    <div class="mb-2"><i class="bi-laptop fs-1 text-primary"></i></div>
+                                    <h3 class="h4 mb-2">Достъп отвсякъде</h3>
+                                    <p class="text-muted mb-0">Можеш да достъпиш отвсякъде твоите станции!</p>
                                 </div>
                             </div>
-
-                            <div className="col-lg-4">
-                                <div className="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                                    <div className="features-icons-icon d-flex"><i
-                                        className="bi-layers m-auto text-primary"></i></div>
-                                    <h3>Bootstrap 5 Ready</h3>
-                                    <p className="lead mb-0">Featuring the latest build of the new Bootstrap 5
-                                        framework!</p>
+                            <div class="col-lg-3 col-md-6 text-center">
+                                <div class="mt-5">
+                                    <div class="mb-2"><i class="bi-globe fs-1 text-primary"></i></div>
+                                    <h3 class="h4 mb-2">Работа в глобална мрежа</h3>
+                                    <p class="text-muted mb-0">Твоите станции пращат измервания постоянно и надежно по мрежата!</p>
                                 </div>
                             </div>
-                            <div className="col-lg-4">
-                                <div className="features-icons-item mx-auto mb-0 mb-lg-3">
-                                    <div className="features-icons-icon d-flex"><i
-                                        className="bi-terminal m-auto text-primary"></i></div>
-                                    <h3>Easy to Use</h3>
-                                    <p className="lead mb-0">Ready to use with your own content, or customize the source
-                                        files!</p>
+                            <div class="col-lg-3 col-md-6 text-center">
+                                <div class="mt-5">
+                                    <div class="mb-2"><i class="bi-heart fs-1 text-primary"></i></div>
+                                    <h3 class="h4 mb-2">Направено за теб</h3>
+                                    <p class="text-muted mb-0">Приложението, станциите и контактите са проектирани, за да имаш постоянни метеорологични условия вкъщи, в градината и къдете още пожелаеш!</p>
                                 </div>
                             </div>
                         </div>

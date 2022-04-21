@@ -14,7 +14,7 @@ class MyPowerPlugs extends Component {
                 <div className="container mt-3">
                     <div className="row">
                         <div className="col text-center">
-                            <button onClick={this.hrefToAddPowerPlug} className="btn btn-warning">Add Plug</button>
+                            <button onClick={this.hrefToAddPowerPlug} className="btn btn-warning">Добави умен контакт</button>
                         </div>
                     </div>
                 </div>

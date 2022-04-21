@@ -18,7 +18,7 @@ class EditPowerPlug extends Component {
             <React.Fragment>
                 <div className="col-md-4 mt-4 container">
                     <div className="text-center border-light p-5">
-                        <p className="h4 mb-4">Edit power plug</p>
+                        <p className="h4 mb-4">Редактирай контакт</p>
                         <div className="form-group">
                             <input
                                 onChange={this.changeInputField}
@@ -72,7 +72,7 @@ class EditPowerPlug extends Component {
                             <option value="HUMIDITY">Humidity</option>
                         </select>
                         <button onClick={this.editPowerPlug} className="btn btn-info btn-block">
-                            Edit Power Plug
+                            Редактирай
                         </button>
                     </div>
                 </div>

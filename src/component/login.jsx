@@ -20,15 +20,15 @@ class UserLogin extends Component {
                     <div className="row">
                         <div className="col-md-3 register-left">
                             <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
-                            <h3>Welcome</h3>
-                            <p>Do not have an account then...</p>
-                            <input type="submit"  onClick={this.moveToRegister} value="Register"/>
+                            <h3>Здравей</h3>
+                            <p>Нямаш акаунт? Става за секунди...</p>
+                            <input type="submit"  onClick={this.moveToRegister} value="Регистрация"/>
                         </div>
                         <div className="col-md-9 register-right">
                             <div className="tab-content" id="myTabContent">
                                 <div className="tab-pane fade show active" id="home" role="tabpanel"
                                      aria-labelledby="home-tab">
-                                    <h3 className="register-heading">Login</h3>
+                                    <h3 className="register-heading">Вход</h3>
                                     <div className="row register-form">
                                         <div className="col-md-6">
                                             <div className="form-group">
@@ -42,8 +42,7 @@ class UserLogin extends Component {
                                                        name="password"/>
                                             </div>
 
-                                            <input type="submit" className="btnDanger" onClick={this.redirectToForgottenPassword} value="Forgotten password"/>
-                                            <input type="submit" className="btnRegister" onClick={this.loginUser} value="Login"/>
+                                            <input type="submit" className="btnRegister" onClick={this.loginUser} value="Вход"/>
                                         </div>
                                     </div>
                                 </div>

@@ -18,7 +18,7 @@ class AddPowerPlug extends Component {
             <React.Fragment>
                 <div className="col-md-4 mt-4 container">
                     <div className="text-center border-light p-5">
-                        <p className="h4 mb-4">Add power plug</p>
+                        <p className="h4 mb-4">Добави контакт</p>
                         <div className="form-group">
                             <input
                                 onChange={this.changeInputField}
@@ -26,7 +26,7 @@ class AddPowerPlug extends Component {
                                 type="text"
                                 className="form-control"
                                 id="ruleBelowValueId"
-                                placeholder="Name"
+                                placeholder="Име"
                                 defaultValue=""
                             />
                         </div>
@@ -37,7 +37,7 @@ class AddPowerPlug extends Component {
                                 type="text"
                                 className="form-control"
                                 id="ruleBelowValueId"
-                                placeholder="Route"
+                                placeholder="Адрес"
                                 defaultValue=""
                             />
                         </div>
@@ -48,32 +48,32 @@ class AddPowerPlug extends Component {
                                 type="text"
                                 className="form-control"
                                 id="ruleBelowValueId"
-                                placeholder="Description"
+                                placeholder="Описани"
                                 defaultValue=""
                             />
                         </div>
                         <select name="actionOnBelowAnomaly" id="ruleBelowActivated" onChange={this.changeInputField}
                                 className="custom-select form-group">
-                            <option disabled="disabled" selected>Enable down boundary condition</option>
+                            <option disabled="disabled" selected>Активирай отклонение за долна граница</option>
                             <option value="TURN_OFF">TURN_OFF</option>
                             <option value="TURN_ON">TURN_ON</option>
                         </select>
                         <select name="actionOnAboveAnomaly" id="ruleBelowActivated" onChange={this.changeInputField}
                                 className="custom-select form-group">
-                            <option disabled="disabled" selected>Enable upper boundary condition</option>
+                            <option disabled="disabled" selected>Активирай отклонение за горна граница</option>
                             <option value="TURN_OFF">TURN_OFF</option>
                             <option value="TURN_ON">TURN_ON</option>
                         </select>
 
                         <select id="typeId" name="type" onChange={this.changeInputField}
                                 className="custom-select form-group">
-                            <option disabled="disabled" selected>Select Type</option>
+                            <option disabled="disabled" selected>Избери тип</option>
                             <option value="TEMPERATURE">Temperature</option>
                             <option value="PRESSURE">Pressure</option>
                             <option value="HUMIDITY">Humidity</option>
                         </select>
                         <button onClick={this.addPowerPlug} className="btn btn-info btn-block">
-                            Add Power Plug
+                            Добави
                         </button>
                     </div>
                 </div>

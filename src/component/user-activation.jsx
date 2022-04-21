@@ -12,7 +12,7 @@ class UserActivation extends Component {
             <React.Fragment>
                 <div className="center">
                     <h1>
-                        Your account has been activated!
+                        Акаунтът беше активиран!
                     </h1>
                 </div>
             </React.Fragment>
