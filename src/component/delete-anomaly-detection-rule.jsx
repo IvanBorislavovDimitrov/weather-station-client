@@ -63,7 +63,6 @@ class DeleteAnomalyDetectionRule extends Component {
                                 className="custom-select form-group">
                             <option selected>{(this.state.type)}</option>
                             <option value="temperature">Temperature</option>
-                            <option value="pressure">Pressure</option>
                             <option value="humidity">Humidity</option>
                         </select>
                         <button onClick={this.deleteAnomalyDetectionRule} className="btn btn-danger btn-block">

@@ -60,8 +60,6 @@ class RaspberryAnomalies extends Component {
                     image = "/assets/img/temp.jpg";
                 } else if (anomalyRule['type'] == "humidity") {
                     image = "/assets/img/humidity.jpg";
-                } else if (anomalyRule['type'] == "pressure") {
-                    image = "/assets/img/pressure.png"
                 }
                 const rowElement = (
                     <div class="col-md-4">
@@ -115,8 +113,6 @@ class RaspberryAnomalies extends Component {
                 return "Температура"
             case "humidity": 
                 return "Влажност" 
-            case "pressure": 
-                return "Налягане"
         }
     }
 

@@ -7,7 +7,6 @@ class RaspberryCharts extends Component {
         this.state = {
             temperatureChart: null,
             humidityChart: null,
-            pressureChart: null
         };
 
     }
@@ -22,7 +21,6 @@ class RaspberryCharts extends Component {
 
                 <canvas id="temperatureChart" width="400" height="70"></canvas>
                 <canvas id="humidityChart" width="400" height="70"></canvas>
-                <canvas id="pressureChart" width="400" height="70"></canvas>
 
             </React.Fragment>
         );
@@ -158,55 +156,9 @@ class RaspberryCharts extends Component {
                     }
                 },
             });
-
-            const pressureChart = new Chart(document.getElementById('pressureChart').getContext('2d'), {
-                type: 'line',
-                data: {
-                    labels: labels,
-                    datasets: [
-                        {
-                            label: 'Налягане',
-                            data: jsonResponse.map(dateWithMeasurement => dateWithMeasurement['measurement'])
-                                .map(measurement => measurement['pressure']),
-                            borderColor: "blue",
-                            fill: false,
-                            cubicInterpolationMode: 'monotone',
-                            tension: 10.4
-                        }
-                    ]
-                },
-                options: {
-                    responsive: true,
-                    plugins: {
-                        title: {
-                            display: true,
-                            text: 'Налягане графика (UTC времева зона)'
-                        },
-                    },
-                    scales: {
-                        x: {
-                            display: true,
-                            title: {
-                                display: true
-                            }
-                        },
-                        y: {
-                            display: true,
-                            title: {
-                                display: true,
-                                text: 'Налягане'
-                            },
-                            suggestedMin: -20,
-                            suggestedMax: 80
-                        }
-                    }
-                },
-            });
-
             that.setState({
                 temperatureChart: temperatureChart,
                 humidityChart: humidityChart,
-                pressureChart: pressureChart,
             })
         });
     }
@@ -236,7 +188,6 @@ class RaspberryCharts extends Component {
 
         this.state.temperatureChart.destroy();
         this.state.humidityChart.destroy();
-        this.state.pressureChart.destroy();
 
         this.visualizeCharts(startPeriod, endPeriod);
     }

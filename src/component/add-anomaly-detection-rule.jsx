@@ -17,7 +17,7 @@ class AddAnomalyDetectionRule extends Component {
             <React.Fragment>
                 <div className="col-md-4 mt-4 container">
                     <div className="text-center border-light p-5">
-                        <p className="h4 mb-4">Добави отклонение</p>
+                        <p className="h4 mb-4">Добави известие за отклонение</p>
 
                         <select name="ruleBelowActivated" id="ruleBelowActivated" onChange={this.changeInputField}
                                 className="custom-select form-group">
@@ -61,7 +61,6 @@ class AddAnomalyDetectionRule extends Component {
                                 className="custom-select form-group">
                             <option disabled="disabled" selected>Избери тип</option>
                             <option value="temperature">Temperature</option>
-                            <option value="pressure">Pressure</option>
                             <option value="humidity">Humidity</option>
                         </select>
                         <button onClick={this.addAnomalyDetectionRule} className="btn btn-info btn-block">

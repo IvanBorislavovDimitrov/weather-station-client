@@ -68,7 +68,6 @@ class EditPowerPlug extends Component {
                                 className="custom-select form-group">
                             <option selected>{this.state.type}</option>
                             <option value="TEMPERATURE">Temperature</option>
-                            <option value="PRESSURE">Pressure</option>
                             <option value="HUMIDITY">Humidity</option>
                         </select>
                         <button onClick={this.editPowerPlug} className="btn btn-info btn-block">

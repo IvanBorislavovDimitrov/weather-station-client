@@ -69,7 +69,6 @@ class AddPowerPlug extends Component {
                                 className="custom-select form-group">
                             <option disabled="disabled" selected>Избери тип</option>
                             <option value="TEMPERATURE">Temperature</option>
-                            <option value="PRESSURE">Pressure</option>
                             <option value="HUMIDITY">Humidity</option>
                         </select>
                         <button onClick={this.addPowerPlug} className="btn btn-info btn-block">
