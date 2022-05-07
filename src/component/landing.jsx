@@ -7,7 +7,9 @@ import '../styles/transformations.css';
 class Landing extends Component {
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {
+            email: null,
+        };
     }
 
     render() {
@@ -42,23 +44,15 @@ class Landing extends Component {
                             <div className="col-xl-6">
                                 <div className="text-center text-white">
                                     <h1 className="mb-5">Абонирай се за най-актуалните новини за приложението!</h1>
-                                    <form className="form-subscribe" id="contactForm"
-                                        data-sb-form-api-token="API_TOKEN">
+                                    <div className="form-subscribe" id="contactForm">
                                         <div className="row">
                                             <div className="col">
-                                                <input className="form-control form-control-lg" id="emailAddress"
-                                                    type="email" placeholder="Имейл адрес"
-                                                    data-sb-validations="required,email" />
-                                                <div className="invalid-feedback text-white"
-                                                    data-sb-feedback="emailAddress:required">Email Address is required.
-                                                </div>
-                                                <div className="invalid-feedback text-white"
-                                                    data-sb-feedback="emailAddress:email">Email Address Email is not
-                                                    valid.
-                                                </div>
+                                                <input name="email" onChange={this.changeInputField} 
+                                                className="form-control form-control-lg" id="emailAddress"
+                                                    type="email" placeholder="Имейл адрес"/>
                                             </div>
                                             <div className="col-auto">
-                                                <button className="btn btn-primary btn-lg disabled" id="submitButton"
+                                                <button onClick={this.sendEmail} className="btn btn-primary btn-lg" id="submitButton"
                                                     type="submit">Изпрати
                                                 </button>
                                             </div>
@@ -74,7 +68,7 @@ class Landing extends Component {
                                         <div className="d-none" id="submitErrorMessage">
                                             <div className="text-center text-danger mb-3">Error sending message!</div>
                                         </div>
-                                    </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -129,6 +123,34 @@ class Landing extends Component {
     };
 
     componentDidMount() {
+    }
+
+    changeInputField = event => {
+        this.setState({
+            [event.target.name]: event.target.value
+        });
+    };
+
+    sendEmail = () => {
+        const that = this;
+        fetch(process.env.REACT_APP_URL + "/subscribe", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": "bearer " + localStorage.getItem("token"),
+            },
+            body: JSON.stringify({
+                "email": that.state.email
+            })
+        }).then(response => {
+            if (!response.ok) {
+                throw new Error("Error occurred");
+            }
+        }).then(response => {
+            window.location.href = "/"
+        }).catch(error => {
+            alert(error)
+        });
     }
 }
 
