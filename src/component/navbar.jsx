@@ -19,8 +19,8 @@ class Navbar extends Component {
         let isModerator = false;
         const userRoles = localStorage.getItem('userRoles');
         if (userRoles !== undefined && userRoles !== null) {
-            isAdmin = userRoles.includes('ADMIN');
-            isModerator = userRoles.includes('MODERATOR');
+            isAdmin = userRoles.includes('admin');
+            isModerator = userRoles.includes('moderator');
         }
 
         return (
@@ -49,11 +49,15 @@ class Navbar extends Component {
                                 <a href="/my-raspberries" className="nav-link">Моите станции</a>
                             </li>
 
-                            <li className="nav-item" hidden={isModerator || isAdmin}>
+                            <li className="nav-item" hidden={!isModerator || !isAdmin}>
                                 <a href="/admin/update-roles/" className="nav-link">Промени роля</a>
                             </li>
 
-                            <li className="nav-item" hidden={isAdmin}>
+                            <li className="nav-item" hidden={!isModerator || !isAdmin}>
+                                <a href="/admin/update-roles/" className="nav-link">Абониране имейли</a>
+                            </li>
+
+                            <li className="nav-item" hidden={!isAdmin}>
                                 <a href="/admin/delete-user/" className="nav-link">Изтрий потребител</a>
                             </li>
 
@@ -88,16 +92,21 @@ class Navbar extends Component {
             await response.text();
             if (response.status !== 200) {
                 localStorage.removeItem('token');
+                localStorage.removeItem('userRoles');
                 window.location.reload();
             }
         }).catch(error => {
             console.log(error);
             localStorage.removeItem('token');
+            localStorage.removeItem('userRoles');
+
         });
     }
 
     logout = () => {
         localStorage.removeItem('token');
+        localStorage.removeItem('userRoles');
+
         window.location.href = '/';
     }
 
