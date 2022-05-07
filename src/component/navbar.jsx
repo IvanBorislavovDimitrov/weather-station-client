@@ -15,6 +15,14 @@ class Navbar extends Component {
             isLoggedIn = true;
         }
 
+        let isAdmin = false;
+        let isModerator = false;
+        const userRoles = localStorage.getItem('userRoles');
+        if (userRoles !== undefined && userRoles !== null) {
+            isAdmin = userRoles.includes('ADMIN');
+            isModerator = userRoles.includes('MODERATOR');
+        }
+
         return (
             <React.Fragment>
                 <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -39,6 +47,14 @@ class Navbar extends Component {
 
                             <li className="nav-item" hidden={!isLoggedIn}>
                                 <a href="/my-raspberries" className="nav-link">Моите станции</a>
+                            </li>
+
+                            <li className="nav-item" hidden={isModerator || isAdmin}>
+                                <a href="/admin/update-roles/" className="nav-link">Промени роля</a>
+                            </li>
+
+                            <li className="nav-item" hidden={isAdmin}>
+                                <a href="/admin/delete-user/" className="nav-link">Изтрий потребител</a>
                             </li>
 
                             <li className="nav-item" hidden={!isLoggedIn}>

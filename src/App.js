@@ -17,6 +17,8 @@ import EditPowerPlug from "./component/edit-power-plug";
 import DeletePowerPlug from "./component/delete-power-plug";
 import EditAnomalyDetectionRule from "./component/edit-anomaly-detection-rule";
 import DeleteAnomalyDetectionRule from "./component/delete-anomaly-detection-rule";
+import UpdateUserRoles from "./component/update-user-roles";
+import DeleteUser from "./component/delete-users";
 
 function App() {
   setTimeout(function () {
@@ -43,6 +45,8 @@ function App() {
         <Route path="/power-plug/delete/" component={DeletePowerPlug} />
         <Route path="/anomaly/edit/" component={EditAnomalyDetectionRule} />
         <Route path="/anomaly/delete/" component={DeleteAnomalyDetectionRule} />
+        <Route exact path="/admin/update-roles/" component={UpdateUserRoles} />
+        <Route exact path="/admin/delete-user/" component={DeleteUser} />
 
       </Switch>
     </BrowserRouter>
