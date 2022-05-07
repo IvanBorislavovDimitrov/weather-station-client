@@ -61,12 +61,12 @@ class MyPowerPlugs extends Component {
                                 <div class="d-flex flex-column ml-2"><span>{powerPlug['name']}</span></div>
                             </div>
                             <div>
-                                <div>{"Power Plug route: " + powerPlug['route']}</div>
-                                <div>{"Power Plug state: " + powerPlug['state']}</div>
-                                <div>{"Power Plug description: " + powerPlug['description']}</div>
-                                <div>{"Action on above anomaly: " + powerPlug['actionOnAboveAnomaly']}</div>
-                                <div>{"Action on below anomaly: " + powerPlug['actionOnBelowAnomaly']}</div>
-                                <div>{"Power Plug Type: " + powerPlug['type']}</div>
+                                <div>{"Мрежови адрес: " + powerPlug['route']}</div>
+                                <div>{"Състояние: " + powerPlug['state']}</div>
+                                <div>{"Описание: " + powerPlug['description']}</div>
+                                <div>{"Действие при горно отклонение: " + powerPlug['actionOnAboveAnomaly']}</div>
+                                <div>{"Действие при долно отклонение: " + powerPlug['actionOnBelowAnomaly']}</div>
+                                <div>{"Тип: " + powerPlug['type']}</div>
                                 <span className="text-primary">
                                     <i className="fa fa-angle-right"></i>
                                 </span>
@@ -75,11 +75,11 @@ class MyPowerPlugs extends Component {
                                 <div>
                                     <button
                                         onClick={() => window.location.href = '/power-plug/edit/' + powerPlug['id']}
-                                        className="mr-3 btn btn-warning">Edit
+                                        className="mr-3 btn btn-warning">Редактирай
                                     </button>
                                     <button
                                         onClick={() => window.location.href = '/power-plug/delete/' + powerPlug['id']}
-                                        className="btn btn-danger">Remove
+                                        className="btn btn-danger">Премахни
                                     </button>
                                 </div>
                             </div>
