@@ -19,6 +19,7 @@ import EditAnomalyDetectionRule from "./component/edit-anomaly-detection-rule";
 import DeleteAnomalyDetectionRule from "./component/delete-anomaly-detection-rule";
 import UpdateUserRoles from "./component/update-user-roles";
 import DeleteUser from "./component/delete-users";
+import SubscribedEmails from "./component/subscribed-emails";
 
 function App() {
   setTimeout(function () {
@@ -47,6 +48,7 @@ function App() {
         <Route path="/anomaly/delete/" component={DeleteAnomalyDetectionRule} />
         <Route exact path="/admin/update-roles/" component={UpdateUserRoles} />
         <Route exact path="/admin/delete-user/" component={DeleteUser} />
+        <Route exact path="/subscribe/emails/" component={SubscribedEmails} />
 
       </Switch>
     </BrowserRouter>

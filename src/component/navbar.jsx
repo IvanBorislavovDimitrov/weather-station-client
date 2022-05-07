@@ -37,6 +37,7 @@ class Navbar extends Component {
                             <li className="nav-item" hidden={isLoggedIn}>
                                 <a className="nav-link" href="/login">Вход</a>
                             </li>
+
                             <li className="nav-item" hidden={isLoggedIn}>
                                 <a className="nav-link" href="/register">Регистрация</a>
                             </li>
@@ -54,7 +55,7 @@ class Navbar extends Component {
                             </li>
 
                             <li className="nav-item" hidden={!isModerator || !isAdmin}>
-                                <a href="/admin/update-roles/" className="nav-link">Абониране имейли</a>
+                                <a href="/subscribe/emails" className="nav-link">Абониране имейли</a>
                             </li>
 
                             <li className="nav-item" hidden={!isAdmin}>
