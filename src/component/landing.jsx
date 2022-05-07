@@ -11,14 +11,37 @@ class Landing extends Component {
     }
 
     render() {
+        let loggedUser = localStorage.getItem('token');
+        let isLoggedIn = loggedUser !== null;
+
+        let isAdmin = false;
+        let isModerator = false;
+        const userRoles = localStorage.getItem('userRoles');
+        if (userRoles !== undefined && userRoles !== null) {
+            isAdmin = userRoles.includes('ADMIN');
+            isModerator = userRoles.includes('MODERATOR');
+        }
+
         return (
             <React.Fragment>
                 <header className="masthead">
                     <div className="container position-relative">
-                        <div className="row justify-content-center">
+                        <div hidden={!isLoggedIn} class="container px-4 px-lg-5 h-100">
+                            <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+                                <div class="col-lg-8 align-self-end">
+                                    <h1 class="text-white font-weight-bold">Имаш ли вече добавена станция? Ако нямаш добави!</h1>
+                                    <hr class="divider" />
+                                </div>
+                                <div class="col-lg-8 align-self-baseline">
+                                    <p class="text-white-75 mb-5"> Отидете при вашати измервателни станции! </p>
+                                    <a class="btn btn-primary btn-xl" href="/my-raspberries">Моите станции</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div hidden={isLoggedIn} className="row justify-content-center">
                             <div className="col-xl-6">
                                 <div className="text-center text-white">
-                                    <h1 className="mb-5">Абонарий се за най-актуалните новини за приложението!</h1>
+                                    <h1 className="mb-5">Абонирай се за най-актуалните новини за приложението!</h1>
                                     <form className="form-subscribe" id="contactForm"
                                         data-sb-form-api-token="API_TOKEN">
                                         <div className="row">

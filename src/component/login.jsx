@@ -1,5 +1,7 @@
 import React, {Component} from "react";
 import '../styles/login.css'
+import JwtDecoder from './jwt/jwt-decoder'
+
 
 class UserLogin extends Component {
     constructor(props) {
@@ -15,7 +17,7 @@ class UserLogin extends Component {
 
     render() {
         return (
-            <React.Fragment>re
+            <React.Fragment>
                 <div className="container register">
                     <div className="row">
                         <div className="col-md-3 register-left">
@@ -75,6 +77,12 @@ class UserLogin extends Component {
                 return;
             }
             localStorage.setItem('token', jsonResponse['token']);
+
+            const jwtDecoder = new JwtDecoder();
+            const decodedToken = jwtDecoder.decodeToken(jsonResponse['token']);
+            const roles = decodedToken['roles'];
+            localStorage.setItem('userRoles', roles);
+
             window.location.href = '/';
         })
             .catch(error => alert(error));
