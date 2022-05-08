@@ -14,7 +14,7 @@ class RaspberryAnomalies extends Component {
                 <div className="container mt-3">
                     <div className="row">
                         <div className="col text-center">
-                            <button onClick={this.hrefToAddAnomaly} className="btn btn-warning">Добави известие за отклонение</button>
+                            <button onClick={this.hrefToAddAnomaly} className="btn btn-warning">Добави граница на отклонение</button>
                         </div>
                     </div>
                 </div>

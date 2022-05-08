@@ -20,7 +20,7 @@ class Register extends Component {
                         <div className="col-md-3 register-left">
                             <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
                             <h3>Здравей</h3>
-                            <p>Имаш акаунт? Тогава...</p>
+                            <p>Имаш акаунт? Тогава влез в профила си...</p>
                             <input type="submit" onClick={this.moveToLogin} value="Вход"/>
                         </div>
                         <div className="col-md-9 register-right">
@@ -69,7 +69,7 @@ class Register extends Component {
                                             </div>
 
                                             <input onClick={this.registerUser} type="submit" className="btnRegister"
-                                                   value="Register"/>
+                                                   value="Регистрация"/>
                                         </div>
                                     </div>
                                 </div>
