@@ -26,6 +26,8 @@ class DeleteUser extends Component {
                                 placeholder="Име"
                             />
                         </div>
+                        <div id="plugNameInvalid" className="text-danger">Потребителят не съществува!</div>
+
                         <button onClick={this.deleteUser} className="btn btn-danger btn-block">
                             Изтрий
                         </button>

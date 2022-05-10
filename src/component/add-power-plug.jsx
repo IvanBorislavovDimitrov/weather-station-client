@@ -30,6 +30,8 @@ class AddPowerPlug extends Component {
                                 defaultValue=""
                             />
                         </div>
+                        <div id="plugNameInvalid" className="text-danger"></div>
+
                         <div className="form-group">
                             <input
                                 onChange={this.changeInputField}
@@ -41,6 +43,8 @@ class AddPowerPlug extends Component {
                                 defaultValue=""
                             />
                         </div>
+                        <div id="plugRouteInvalid" className="text-danger"></div>
+
                         <div className="form-group">
                             <input
                                 onChange={this.changeInputField}
@@ -83,6 +87,19 @@ class AddPowerPlug extends Component {
     addPowerPlug = () => {
         const currentThis = this;
         const raspberryId = currentThis.getRaspberryId();
+
+        let stop = false;
+        if (currentThis.state.name == null) {
+            stop = true;
+            document.getElementById('plugNameInvalid').textContent = "Въведи име на умен контакт!";
+        }
+        if (currentThis.state.route == null) {
+            stop = true;
+            document.getElementById('plugRouteInvalid').textContent = "Въведи адрес на умент контакт!";
+        }
+        if (stop) {
+            return;
+        }
 
         if (currentThis.state.actionOnAboveAnomaly == null || currentThis.state.actionOnBelowAnomaly == null ||
             currentThis.state.name == null || currentThis.state.type == null || currentThis.state.description == null

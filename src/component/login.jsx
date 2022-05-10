@@ -85,7 +85,9 @@ class UserLogin extends Component {
 
             window.location.href = '/';
         })
-            .catch(error => alert(error));
+            .catch(error => {
+                alert("Невалидно потребителко име или парола!")
+            });
     }
 
     changeInputField = event => {

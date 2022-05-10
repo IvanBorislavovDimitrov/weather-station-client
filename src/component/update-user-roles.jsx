@@ -36,6 +36,8 @@ class UpdateUserRoles extends Component {
                                 placeholder="Роли (разделени със запетайка)"
                             />
                         </div>
+                        <div id="plugNameInvalid" className="text-danger">Въведените роли са невалидни!</div>
+
                         <button onClick={this.changeRole} className="btn btn-info btn-block">
                             Обнови
                             </button>

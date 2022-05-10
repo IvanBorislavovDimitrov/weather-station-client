@@ -95,19 +95,19 @@ class Register extends Component {
         confirmPasswordNameInvalidForm.textContent = '';
         let stop = false;
         if (!this.validateEmail()) {
-            emailNameInvalidForm.textContent = 'Enter an email';
+            emailNameInvalidForm.textContent = 'Въведи имейл';
             stop = true;
         }
         if (!this.validateUsername()) {
-            usernameNameInvalidForm.textContent = 'Enter a username';
+            usernameNameInvalidForm.textContent = 'Въведи потребителско име';
             stop = true;
         }
         if (!this.validatePassword()) {
-            passwordNameInvalidForm.textContent = 'Enter a password';
+            passwordNameInvalidForm.textContent = 'Въведи парола';
             stop = true;
         }
         if (!this.validateConfirmPassword()) {
-            confirmPasswordNameInvalidForm.textContent = 'Enter a confirm password';
+            confirmPasswordNameInvalidForm.textContent = 'Потвърди парола';
             stop = true;
         }
         if (stop) {

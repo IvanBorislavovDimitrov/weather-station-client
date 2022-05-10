@@ -26,6 +26,7 @@ class AddRaspberry extends Component {
                                 placeholder="Име"
                             />
                         </div>
+                        <div id="raspberryNameInvalid" className="text-danger"></div>
                         <div id="routeField" className="form-group">
                             <input
                                 onChange={this.changeInputField}
@@ -36,6 +37,7 @@ class AddRaspberry extends Component {
                                 placeholder="Адрес"
                             />
                         </div>
+                        <div id="raspberryRouteInvalid" className="text-danger"></div>
                         <div id="raspberryDescription" className="form-group">
                             <input
                                 onChange={this.changeInputField}
@@ -57,10 +59,22 @@ class AddRaspberry extends Component {
 
     addRaspberry = () => {
         const currentThis = this;
+        let stop = false;
+        if (currentThis.state.name == null) {
+            stop = true;
+            document.getElementById('raspberryNameInvalid').textContent = "Въведи име на измервателната станция!";
+        }
+        if (currentThis.state.route == null) {
+            stop = true;
+            document.getElementById('raspberryRouteInvalid').textContent = "Въведи адрес на измервателната станция!";
+        }
         const raspberryCreateBody = {
             name: currentThis.state.name,
             route: currentThis.state.route,
             description: currentThis.state.description
+        }
+        if (stop) {
+            return;
         }
         fetch(process.env.REACT_APP_URL + "/raspberry", {
             method: "POST",
