@@ -64,7 +64,7 @@ class AddAnomalyDetectionRule extends Component {
                             <option value="humidity">Humidity</option>
                         </select>
                         <button onClick={this.addAnomalyDetectionRule} className="btn btn-info btn-block">
-                            Add Anomaly Detection Rule
+                            Добави граница на отклонение
                         </button>
                     </div>
                 </div>

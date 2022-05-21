@@ -4,9 +4,8 @@ class UpdateUserRoles extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: null,
-            route: null,
-            description: null,
+            username: null,
+            roles: null,
         };
     }
 
@@ -16,28 +15,26 @@ class UpdateUserRoles extends Component {
                 <div className="col-md-4 mt-4 container">
                     <div className="text-center border-light p-5">
                         <p className="h4 mb-4">Промени роли на потребител</p>
-                        <div id="raspberryField" className="form-group">
+                        <div className="form-group">
                             <input
                                 onChange={this.changeInputField}
-                                name="name"
+                                name="username"
                                 type="text"
                                 className="form-control"
-                                id="raspberryNameId"
                                 placeholder="Име"
                             />
                         </div>
-                        <div id="routeField" className="form-group">
+                        <div id="usernameInvalid" className="text-danger"></div>
+                        <div className="form-group">
                             <input
                                 onChange={this.changeInputField}
-                                name="route"
+                                name="roles"
                                 type="text"
                                 className="form-control"
-                                id="raspberryRouteId"
                                 placeholder="Роли (разделени със запетайка)"
                             />
                         </div>
-                        <div id="plugNameInvalid" className="text-danger">Въведените роли са невалидни!</div>
-
+                        <div id="rolesInvalid" className="text-danger"></div>
                         <button onClick={this.changeRole} className="btn btn-info btn-block">
                             Обнови
                             </button>
@@ -48,15 +45,28 @@ class UpdateUserRoles extends Component {
     }
 
     changeRole = () => {
-        const currentThis = this;
-        const raspberryCreateBody = {
-            name: currentThis.state.name,
-            route: currentThis.state.route,
-            description: currentThis.state.description
+        document.getElementById("usernameInvalid").textContent = "";
+        document.getElementById("rolesInvalid").textContent = "";
+        let invalidForm = false;
+        if (this.state.username == null || this.state.username == "") {
+            document.getElementById("usernameInvalid").textContent = "Невалидно потребителско име!";
+            invalidForm = true;
         }
-        fetch(process.env.REACT_APP_URL + "/raspberry", {
+        if (this.state.roles == null || this.state.roles == "") {
+            document.getElementById("rolesInvalid").textContent = "Невалидни роли!";
+            invalidForm = true;
+        }
+        if (invalidForm) {
+            return;
+        }
+        const currentThis = this;
+        const changeRoleBody = {
+            username: currentThis.state.username,
+            roles: currentThis.state.roles,
+        }
+        fetch(process.env.REACT_APP_URL + "/admin/change-role", {
             method: "POST",
-            body: JSON.stringify(raspberryCreateBody),
+            body: JSON.stringify(changeRoleBody),
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': 'bearer ' + localStorage.getItem('token')
