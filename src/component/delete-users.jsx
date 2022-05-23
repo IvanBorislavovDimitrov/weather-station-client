@@ -4,9 +4,7 @@ class DeleteUser extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: null,
-            route: null,
-            description: null,
+            username: null,
         };
     }
 
@@ -19,14 +17,14 @@ class DeleteUser extends Component {
                         <div id="raspberryField" className="form-group">
                             <input
                                 onChange={this.changeInputField}
-                                name="name"
+                                name="username"
                                 type="text"
                                 className="form-control"
                                 id="raspberryNameId"
                                 placeholder="Име"
                             />
                         </div>
-                        <div id="plugNameInvalid" className="text-danger">Потребителят не съществува!</div>
+                        <div id="userNotExistDiv" className="text-danger"></div>
 
                         <button onClick={this.deleteUser} className="btn btn-danger btn-block">
                             Изтрий
@@ -38,15 +36,14 @@ class DeleteUser extends Component {
     }
 
     deleteUser = () => {
-        const currentThis = this;
-        const raspberryCreateBody = {
-            name: currentThis.state.name,
-            route: currentThis.state.route,
-            description: currentThis.state.description
+        document.getElementById("userNotExistDiv").textContent = "";
+        if (this.state.username == null) {
+            document.getElementById("userNotExistDiv").textContent = "Въведи потребителско име!";
+            return;
         }
-        fetch(process.env.REACT_APP_URL + "/raspberry", {
+        const currentThis = this;
+        fetch(process.env.REACT_APP_URL + "/admin/delete-user/" + currentThis.state.username, {
             method: "POST",
-            body: JSON.stringify(raspberryCreateBody),
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': 'bearer ' + localStorage.getItem('token')
@@ -56,7 +53,7 @@ class DeleteUser extends Component {
             if (response.status != 200) {
                 alert(response.status);
             }
-            window.location.href = '/my-raspberries';
+            window.location.href = '/';
         }).catch(error => {
             alert(error);
         });
