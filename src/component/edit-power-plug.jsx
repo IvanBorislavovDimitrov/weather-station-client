@@ -54,13 +54,13 @@ class EditPowerPlug extends Component {
                         </div>
                         <select name="actionOnBelowAnomaly" id="ruleBelowActivated" onChange={this.changeInputField}
                                 className="custom-select form-group">
-                            <option selected>{this.formatAnomallyRule(this.state.actionOnBelowAnomaly)}</option>
+                            <option selected>{(this.state.actionOnBelowAnomaly)}</option>
                             <option value="TURN_OFF">TURN_OFF</option>
                             <option value="TURN_ON">TURN_ON</option>
                         </select>
                         <select name="actionOnAboveAnomaly" id="ruleBelowActivated" onChange={this.changeInputField}
                                 className="custom-select form-group">
-                            <option selected>{this.formatAnomallyRule(this.state.actionOnAboveAnomaly)}</option>
+                            <option selected>{(this.state.actionOnAboveAnomaly)}</option>
                             <option value="TURN_OFF">TURN_OFF</option>
                             <option value="TURN_ON">TURN_ON</option>
                         </select>
@@ -116,6 +116,7 @@ class EditPowerPlug extends Component {
     }
 
     componentDidMount() {
+        const currentThis = this;
         fetch(process.env.REACT_APP_URL + "/power-plug/" + this.getPowerPlugId(), {
             method: "GET",
             headers: {
@@ -133,8 +134,8 @@ class EditPowerPlug extends Component {
                 name: powerPlug["name"],
                 route: powerPlug["route"],
                 description: powerPlug["description"],
-                actionOnBelowAnomaly: powerPlug["actionOnBelowAnomaly"],
-                actionOnAboveAnomaly: powerPlug["actionOnAboveAnomaly"],
+                actionOnBelowAnomaly: currentThis.formatAnomallyRule(powerPlug["actionOnBelowAnomaly"]),
+                actionOnAboveAnomaly: currentThis.formatAnomallyRule(powerPlug["actionOnAboveAnomaly"]),
                 type: powerPlug["type"]
             })
         }).catch(error => {
@@ -152,7 +153,7 @@ class EditPowerPlug extends Component {
     getPowerPlugId = () => {
         const splitUrl = window.location.href.split('/');
         return decodeURIComponent(splitUrl[splitUrl.length - 1]);
-    };
+    };q
 
     formatAnomallyRule = (isOn) => {
         if (isOn == "on") {
